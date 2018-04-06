@@ -1,0 +1,69 @@
+workspace:
+  base: /srv/app
+  path: src/github.com/gopad/gopad-ruby
+
+branches:
+  - master
+
+pipeline:
+  cache-restore:
+    image: plugins/s3-cache:1
+    pull: true
+    secrets: [ cache_s3_endpoint, cache_s3_access_key, cache_s3_secret_key ]
+    restore: true
+    when:
+      local: false
+
+  sdk-prepare:
+    image: webhippie/ruby:latest
+    pull: true
+    commands:
+      - bundle install --path=gems --retry=5 --jobs=5
+
+  sdk-test:
+    image: webhippie/ruby:latest
+    pull: true
+    commands:
+      - bundle exec rake
+
+  # sdk-release:
+  #   image: plugins/rubygems:1
+  #   pull: true
+  #   secrets: [ rubygems_api_key ]
+  #   gemname: gopad
+  #   gemspec: gopad.gemspec
+  #   when:
+  #     event: [ tag ]
+  #     branch: master
+
+  cache-rebuild:
+    image: plugins/s3-cache:1
+    pull: true
+    secrets: [ cache_s3_endpoint, cache_s3_access_key, cache_s3_secret_key ]
+    rebuild: true
+    mount:
+      - gems/
+    when:
+      local: false
+      event: [ push ]
+      branch: master
+
+  cache-flush:
+    image: plugins/s3-cache:1
+    pull: true
+    secrets: [ cache_s3_endpoint, cache_s3_access_key, cache_s3_secret_key ]
+    flush: true
+    flush_age: 14
+    when:
+      local: false
+      event: [ push ]
+      branch: master
+
+  notify-matrix:
+    image: plugins/matrix:1
+    pull: true
+    secrets: [ matrix_roomid, matrix_username, matrix_password ]
+    when:
+      local: false
+      events: [ push, tag ]
+      status: [ changed, failure ]
