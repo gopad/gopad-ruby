@@ -8,8 +8,6 @@
 
 **This project is under heavy development, it's not in a working state yet!**
 
-Where does this name come from or what does it mean? It's quite simple, it's one german word for transshipment, I thought it's a good match as it is related to containers and a harbor.
-
 This repository will provide a client SDK for Ruby.
 
 
