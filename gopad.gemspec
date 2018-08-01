@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
   s.executables = []
   s.require_paths = ["lib"]
 
-  s.required_ruby_version = ">= 2.1.0"
+  s.required_ruby_version = ">= 2.5.0"
 
   s.add_development_dependency "bundler"
   s.add_development_dependency "codacy-coverage"
