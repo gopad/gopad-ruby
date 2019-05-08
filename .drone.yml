@@ -1,69 +1,72 @@
-workspace:
-  base: /srv/app
-  path: src/github.com/gopad/gopad-ruby
+---
+kind: pipeline
+name: testing
 
-branches:
-  - master
+platform:
+  os: linux
+  arch: amd64
 
-pipeline:
-  cache-restore:
-    image: plugins/s3-cache:1
-    pull: true
-    secrets: [ cache_s3_endpoint, cache_s3_access_key, cache_s3_secret_key ]
-    restore: true
-    when:
-      local: false
+steps:
+- name: prepare
+  image: webhippie/ruby:latest
+  pull: always
+  commands:
+  - bundle install --path=gems --retry=5 --jobs=5
 
-  sdk-prepare:
-    image: webhippie/ruby:latest
-    pull: true
-    commands:
-      - bundle install --path=gems --retry=5 --jobs=5
+- name: rubocop
+  image: webhippie/ruby:latest
+  pull: always
+  commands:
+  - bundle exec rake rubocop
+  depends_on:
+  - prepare
 
-  sdk-test:
-    image: webhippie/ruby:latest
-    pull: true
-    commands:
-      - bundle exec rake
+- name: test
+  image: webhippie/ruby:latest
+  pull: always
+  commands:
+  - bundle exec rake spec
+  depends_on:
+  - prepare
 
-  # sdk-release:
-  #   image: plugins/rubygems:1
-  #   pull: true
-  #   secrets: [ rubygems_api_key ]
-  #   gemname: gopad
-  #   gemspec: gopad.gemspec
-  #   when:
-  #     event: [ tag ]
-  #     branch: master
+- name: release
+  image: plugins/rubygems:1
+  pull: always
+  settings:
+    gemname: gopad
+    gemspec: gopad.gemspec
+    api_key:
+      from_secret: rubygems_api_key
+  when:
+    event:
+    - tag
+  depends_on:
+  - test
 
-  cache-rebuild:
-    image: plugins/s3-cache:1
-    pull: true
-    secrets: [ cache_s3_endpoint, cache_s3_access_key, cache_s3_secret_key ]
-    rebuild: true
-    mount:
-      - gems/
-    when:
-      local: false
-      event: [ push ]
-      branch: master
+- name: notify
+  image: plugins/matrix:1
+  pull: always
+  settings:
+    username:
+      from_secret: matrix_username
+    password:
+      from_secret: matrix_password
+    roomid:
+      from_secret: matrix_roomid
+  when:
+    event:
+    - push
+    - tag
+    status:
+    - failure
+  depends_on:
+  - prepare
+  - rubocop
+  - test
+  - release
 
-  cache-flush:
-    image: plugins/s3-cache:1
-    pull: true
-    secrets: [ cache_s3_endpoint, cache_s3_access_key, cache_s3_secret_key ]
-    flush: true
-    flush_age: 14
-    when:
-      local: false
-      event: [ push ]
-      branch: master
-
-  notify-matrix:
-    image: plugins/matrix:1
-    pull: true
-    secrets: [ matrix_roomid, matrix_username, matrix_password ]
-    when:
-      local: false
-      event: [ push, tag ]
-      status: [ changed, failure ]
+trigger:
+  ref:
+  - refs/heads/master
+  - refs/tags/**
+  - refs/pull/**

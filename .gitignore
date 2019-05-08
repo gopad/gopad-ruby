@@ -1,9 +1,8 @@
-/gems/
-/pkg/
+doc/
+gems/
+pkg/
 
-/.yardoc/
-/doc/
-
-/.bundle/
+.yardoc
+.bundle
 
 Gemfile.lock
