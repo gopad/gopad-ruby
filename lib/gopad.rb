@@ -21,5 +21,5 @@
 #
 module Gopad
   autoload :Version,
-    File.expand_path("gopad/version", __DIR__)
+           File.expand_path("gopad/version", __DIR__)
 end
