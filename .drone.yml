@@ -16,6 +16,9 @@ steps:
 - name: rubocop
   image: webhippie/ruby:latest
   pull: always
+  environment:
+    CODACY_PROJECT_TOKEN:
+      from_secret: codacy_token
   commands:
   - bundle exec rake rubocop
   depends_on:
@@ -24,6 +27,9 @@ steps:
 - name: test
   image: webhippie/ruby:latest
   pull: always
+  environment:
+    CODACY_PROJECT_TOKEN:
+      from_secret: codacy_token
   commands:
   - bundle exec rake spec
   depends_on:
