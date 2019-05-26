@@ -21,8 +21,6 @@ steps:
       from_secret: codacy_token
   commands:
   - bundle exec rake rubocop
-  depends_on:
-  - prepare
 
 - name: test
   image: webhippie/ruby:latest
@@ -32,8 +30,6 @@ steps:
       from_secret: codacy_token
   commands:
   - bundle exec rake spec
-  depends_on:
-  - prepare
 
 - name: release
   image: plugins/rubygems:1
@@ -46,8 +42,6 @@ steps:
   when:
     event:
     - tag
-  depends_on:
-  - test
 
 - name: notify
   image: plugins/matrix:1
@@ -65,11 +59,6 @@ steps:
     - tag
     status:
     - failure
-  depends_on:
-  - prepare
-  - rubocop
-  - test
-  - release
 
 trigger:
   ref:
