@@ -13,24 +13,24 @@ OpenAPI Generator version: 4.0.0
 require 'date'
 
 module Gopad
-  class InlineObject
-    attr_accessor :username
+  class ValidationErrorErrors
+    attr_accessor :field
 
-    attr_accessor :password
+    attr_accessor :message
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'username' => :'username',
-        :'password' => :'password'
+        :'field' => :'field',
+        :'message' => :'message'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'username' => :'String',
-        :'password' => :'String'
+        :'field' => :'String',
+        :'message' => :'String'
       }
     end
 
@@ -38,23 +38,23 @@ module Gopad
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Gopad::InlineObject` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Gopad::ValidationErrorErrors` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Gopad::InlineObject`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Gopad::ValidationErrorErrors`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'username')
-        self.username = attributes[:'username']
+      if attributes.key?(:'field')
+        self.field = attributes[:'field']
       end
 
-      if attributes.key?(:'password')
-        self.password = attributes[:'password']
+      if attributes.key?(:'message')
+        self.message = attributes[:'message']
       end
     end
 
@@ -62,22 +62,12 @@ module Gopad
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @username.nil?
-        invalid_properties.push('invalid value for "username", username cannot be nil.')
-      end
-
-      if @password.nil?
-        invalid_properties.push('invalid value for "password", password cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @username.nil?
-      return false if @password.nil?
       true
     end
 
@@ -86,8 +76,8 @@ module Gopad
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          username == o.username &&
-          password == o.password
+          field == o.field &&
+          message == o.message
     end
 
     # @see the `==` method
@@ -99,7 +89,7 @@ module Gopad
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [username, password].hash
+      [field, message].hash
     end
 
     # Builds the object from hash

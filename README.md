@@ -54,11 +54,11 @@ Please follow the [installation](#installation) instructions and then run the fo
 require 'gopad'
 
 api = Gopad::AuthApi.new
-auth = Gopad::InlineObject.new # InlineObject | 
+params = Gopad::AuthLogin.new # AuthLogin | The credentials to authenticate
 
 begin
   # Authenticate an user by credentials
-  result =  api.login_user(auth)
+  result =  api.login_user(params)
   p result
 rescue Gopad::ApiError => e
   puts "Exception when calling AuthApi->login_user: #{e}"
@@ -99,20 +99,33 @@ Class | Method | HTTP request | Description
 
 ## Documentation for models
 
+ - [Gopad::AuthLogin](docs/AuthLogin.md)
  - [Gopad::AuthToken](docs/AuthToken.md)
  - [Gopad::AuthVerify](docs/AuthVerify.md)
- - [Gopad::InlineObject](docs/InlineObject.md)
+ - [Gopad::GeneralError](docs/GeneralError.md)
  - [Gopad::Profile](docs/Profile.md)
  - [Gopad::Team](docs/Team.md)
  - [Gopad::TeamUser](docs/TeamUser.md)
  - [Gopad::TeamUserParams](docs/TeamUserParams.md)
  - [Gopad::User](docs/User.md)
  - [Gopad::UserTeamParams](docs/UserTeamParams.md)
+ - [Gopad::ValidationError](docs/ValidationError.md)
+ - [Gopad::ValidationErrorErrors](docs/ValidationErrorErrors.md)
 
 
 ## Documentation for authorization
 
- All endpoints do not require authorization.
+
+### BasicAuth
+
+- **Type**: HTTP basic authentication
+
+### HeaderAuth
+
+
+- **Type**: API key
+- **API key parameter name**: X-API-Key
+- **Location**: HTTP header
 
 
 ## Security

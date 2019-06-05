@@ -17,15 +17,18 @@ require 'gopad/version'
 require 'gopad/configuration'
 
 # Models
+require 'gopad/models/auth_login'
 require 'gopad/models/auth_token'
 require 'gopad/models/auth_verify'
-require 'gopad/models/inline_object'
+require 'gopad/models/general_error'
 require 'gopad/models/profile'
 require 'gopad/models/team'
 require 'gopad/models/team_user'
 require 'gopad/models/team_user_params'
 require 'gopad/models/user'
 require 'gopad/models/user_team_params'
+require 'gopad/models/validation_error'
+require 'gopad/models/validation_error_errors'
 
 # APIs
 require 'gopad/api/auth_api'

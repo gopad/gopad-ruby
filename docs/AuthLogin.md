@@ -1,4 +1,4 @@
-# Gopad::InlineObject
+# Gopad::AuthLogin
 
 ## Properties
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Gopad'
 
-instance = Gopad::InlineObject.new(username: null,
+instance = Gopad::AuthLogin.new(username: null,
                                  password: null)
 ```
 

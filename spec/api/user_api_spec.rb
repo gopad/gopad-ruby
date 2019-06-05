@@ -37,7 +37,7 @@ describe 'UserApi' do
   # @param user_id A user UUID or slug
   # @param user_team The user team data to assign
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [GeneralError]
   describe 'append_user_to_team test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -59,7 +59,7 @@ describe 'UserApi' do
   # Delete a specific user
   # @param user_id A user UUID or slug
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [GeneralError]
   describe 'delete_user test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -71,7 +71,7 @@ describe 'UserApi' do
   # @param user_id A user UUID or slug
   # @param user_team The user team data to delete
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [GeneralError]
   describe 'delete_user_from_team test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -104,7 +104,7 @@ describe 'UserApi' do
   # @param user_id A user UUID or slug
   # @param user_team The user team data to update
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [GeneralError]
   describe 'permit_user_team test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

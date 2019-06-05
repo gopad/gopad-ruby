@@ -34,7 +34,7 @@ describe 'AuthApi' do
 
   # unit tests for login_user
   # Authenticate an user by credentials
-  # @param auth 
+  # @param params The credentials to authenticate
   # @param [Hash] opts the optional parameters
   # @return [AuthToken]
   describe 'login_user test' do

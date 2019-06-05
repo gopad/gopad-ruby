@@ -23,7 +23,7 @@ module Gopad
     # @param user_id [String] A user UUID or slug
     # @param user_team [UserTeamParams] The user team data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def append_user_to_team(user_id, user_team, opts = {})
       data, _status_code, _headers = append_user_to_team_with_http_info(user_id, user_team, opts)
       data
@@ -33,7 +33,7 @@ module Gopad
     # @param user_id [String] A user UUID or slug
     # @param user_team [UserTeamParams] The user team data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def append_user_to_team_with_http_info(user_id, user_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.append_user_to_team ...'
@@ -66,7 +66,7 @@ module Gopad
       post_body = opts[:body] || @api_client.object_to_http_body(user_team) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -152,7 +152,7 @@ module Gopad
     # Delete a specific user
     # @param user_id [String] A user UUID or slug
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_user(user_id, opts = {})
       data, _status_code, _headers = delete_user_with_http_info(user_id, opts)
       data
@@ -161,7 +161,7 @@ module Gopad
     # Delete a specific user
     # @param user_id [String] A user UUID or slug
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_user_with_http_info(user_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.delete_user ...'
@@ -188,7 +188,7 @@ module Gopad
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -213,7 +213,7 @@ module Gopad
     # @param user_id [String] A user UUID or slug
     # @param user_team [UserTeamParams] The user team data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_user_from_team(user_id, user_team, opts = {})
       data, _status_code, _headers = delete_user_from_team_with_http_info(user_id, user_team, opts)
       data
@@ -223,7 +223,7 @@ module Gopad
     # @param user_id [String] A user UUID or slug
     # @param user_team [UserTeamParams] The user team data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_user_from_team_with_http_info(user_id, user_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.delete_user_from_team ...'
@@ -256,7 +256,7 @@ module Gopad
       post_body = opts[:body] || @api_client.object_to_http_body(user_team) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -395,7 +395,7 @@ module Gopad
     # @param user_id [String] A user UUID or slug
     # @param user_team [UserTeamParams] The user team data to update
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def permit_user_team(user_id, user_team, opts = {})
       data, _status_code, _headers = permit_user_team_with_http_info(user_id, user_team, opts)
       data
@@ -405,7 +405,7 @@ module Gopad
     # @param user_id [String] A user UUID or slug
     # @param user_team [UserTeamParams] The user team data to update
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def permit_user_team_with_http_info(user_id, user_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.permit_user_team ...'
@@ -438,7 +438,7 @@ module Gopad
       post_body = opts[:body] || @api_client.object_to_http_body(user_team) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
