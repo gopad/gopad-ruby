@@ -66,13 +66,13 @@ describe 'TeamApi' do
     end
   end
 
-  # unit tests for delte_team_from_user
+  # unit tests for delete_team_from_user
   # Remove a user from team
   # @param team_id A team UUID or slug
   # @param team_user The team user data to delete
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
-  describe 'delte_team_from_user test' do
+  describe 'delete_team_from_user test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

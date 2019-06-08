@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **slug** | **String** |  | [optional] 
 **username** | **String** |  | 
+**password** | **String** |  | [optional] 
 **email** | **String** |  | 
 **admin** | **Boolean** |  | [optional] 
 **active** | **Boolean** |  | [optional] 
@@ -21,6 +22,7 @@ require 'Gopad'
 instance = Gopad::User.new(id: null,
                                  slug: null,
                                  username: null,
+                                 password: null,
                                  email: null,
                                  admin: null,
                                  active: null,

@@ -47,6 +47,10 @@ describe 'TeamUser' do
   describe 'test attribute "perm"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["user", "admin", "owner"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.perm = value }.not_to raise_error
+      # end
     end
   end
 

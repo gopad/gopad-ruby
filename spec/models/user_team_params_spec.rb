@@ -32,12 +32,6 @@ describe 'UserTeamParams' do
       expect(@instance).to be_instance_of(Gopad::UserTeamParams)
     end
   end
-  describe 'test attribute "user"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   describe 'test attribute "team"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -47,6 +41,10 @@ describe 'UserTeamParams' do
   describe 'test attribute "perm"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["user", "admin", "owner"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.perm = value }.not_to raise_error
+      # end
     end
   end
 

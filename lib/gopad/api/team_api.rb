@@ -214,8 +214,8 @@ module Gopad
     # @param team_user [TeamUserParams] The team user data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delte_team_from_user(team_id, team_user, opts = {})
-      data, _status_code, _headers = delte_team_from_user_with_http_info(team_id, team_user, opts)
+    def delete_team_from_user(team_id, team_user, opts = {})
+      data, _status_code, _headers = delete_team_from_user_with_http_info(team_id, team_user, opts)
       data
     end
 
@@ -224,17 +224,17 @@ module Gopad
     # @param team_user [TeamUserParams] The team user data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delte_team_from_user_with_http_info(team_id, team_user, opts = {})
+    def delete_team_from_user_with_http_info(team_id, team_user, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TeamApi.delte_team_from_user ...'
+        @api_client.config.logger.debug 'Calling API: TeamApi.delete_team_from_user ...'
       end
       # verify the required parameter 'team_id' is set
       if @api_client.config.client_side_validation && team_id.nil?
-        fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.delte_team_from_user"
+        fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.delete_team_from_user"
       end
       # verify the required parameter 'team_user' is set
       if @api_client.config.client_side_validation && team_user.nil?
-        fail ArgumentError, "Missing the required parameter 'team_user' when calling TeamApi.delte_team_from_user"
+        fail ArgumentError, "Missing the required parameter 'team_user' when calling TeamApi.delete_team_from_user"
       end
       # resource path
       local_var_path = '/teams/{team_id}/users'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -272,7 +272,7 @@ module Gopad
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TeamApi#delte_team_from_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TeamApi#delete_team_from_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

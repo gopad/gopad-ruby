@@ -20,25 +20,25 @@ module Gopad
       @api_client = api_client
     end
     # Authenticate an user by credentials
-    # @param params [AuthLogin] The credentials to authenticate
+    # @param auth_login [AuthLogin] The credentials to authenticate
     # @param [Hash] opts the optional parameters
     # @return [AuthToken]
-    def login_user(params, opts = {})
-      data, _status_code, _headers = login_user_with_http_info(params, opts)
+    def login_user(auth_login, opts = {})
+      data, _status_code, _headers = login_user_with_http_info(auth_login, opts)
       data
     end
 
     # Authenticate an user by credentials
-    # @param params [AuthLogin] The credentials to authenticate
+    # @param auth_login [AuthLogin] The credentials to authenticate
     # @param [Hash] opts the optional parameters
     # @return [Array<(AuthToken, Integer, Hash)>] AuthToken data, response status code and response headers
-    def login_user_with_http_info(params, opts = {})
+    def login_user_with_http_info(auth_login, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AuthApi.login_user ...'
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling AuthApi.login_user"
+      # verify the required parameter 'auth_login' is set
+      if @api_client.config.client_side_validation && auth_login.nil?
+        fail ArgumentError, "Missing the required parameter 'auth_login' when calling AuthApi.login_user"
       end
       # resource path
       local_var_path = '/auth/login'
@@ -57,7 +57,7 @@ module Gopad
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(auth_login) 
 
       # return_type
       return_type = opts[:return_type] || 'AuthToken' 

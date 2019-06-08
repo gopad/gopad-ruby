@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user** | **String** |  | 
 **team** | **String** |  | 
 **perm** | **String** |  | 
 
@@ -13,8 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Gopad'
 
-instance = Gopad::UserTeamParams.new(user: null,
-                                 team: null,
+instance = Gopad::UserTeamParams.new(team: null,
                                  perm: null)
 ```
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## login_user
 
-> AuthToken login_user(params)
+> AuthToken login_user(auth_login)
 
 Authenticate an user by credentials
 
@@ -23,11 +23,11 @@ Authenticate an user by credentials
 require 'gopad'
 
 api_instance = Gopad::AuthApi.new
-params = Gopad::AuthLogin.new # AuthLogin | The credentials to authenticate
+auth_login = Gopad::AuthLogin.new # AuthLogin | The credentials to authenticate
 
 begin
   #Authenticate an user by credentials
-  result = api_instance.login_user(params)
+  result = api_instance.login_user(auth_login)
   p result
 rescue Gopad::ApiError => e
   puts "Exception when calling AuthApi->login_user: #{e}"
@@ -39,7 +39,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | [**AuthLogin**](AuthLogin.md)| The credentials to authenticate | 
+ **auth_login** | [**AuthLogin**](AuthLogin.md)| The credentials to authenticate | 
 
 ### Return type
 

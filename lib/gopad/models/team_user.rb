@@ -20,6 +20,28 @@ module Gopad
 
     attr_accessor :perm
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -91,7 +113,19 @@ module Gopad
       return false if @team_id.nil?
       return false if @user_id.nil?
       return false if @perm.nil?
+      perm_validator = EnumAttributeValidator.new('String', ["user", "admin", "owner"])
+      return false unless perm_validator.valid?(@perm)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] perm Object to be assigned
+    def perm=(perm)
+      validator = EnumAttributeValidator.new('String', ["user", "admin", "owner"])
+      unless validator.valid?(perm)
+        fail ArgumentError, "invalid value for \"perm\", must be one of #{validator.allowable_values}."
+      end
+      @perm = perm
     end
 
     # Checks equality by comparing each attribute.

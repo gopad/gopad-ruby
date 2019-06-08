@@ -20,6 +20,8 @@ module Gopad
 
     attr_accessor :username
 
+    attr_accessor :password
+
     attr_accessor :email
 
     attr_accessor :admin
@@ -36,6 +38,7 @@ module Gopad
         :'id' => :'id',
         :'slug' => :'slug',
         :'username' => :'username',
+        :'password' => :'password',
         :'email' => :'email',
         :'admin' => :'admin',
         :'active' => :'active',
@@ -50,6 +53,7 @@ module Gopad
         :'id' => :'String',
         :'slug' => :'String',
         :'username' => :'String',
+        :'password' => :'String',
         :'email' => :'String',
         :'admin' => :'Boolean',
         :'active' => :'Boolean',
@@ -83,6 +87,10 @@ module Gopad
 
       if attributes.key?(:'username')
         self.username = attributes[:'username']
+      end
+
+      if attributes.key?(:'password')
+        self.password = attributes[:'password']
       end
 
       if attributes.key?(:'email')
@@ -137,6 +145,7 @@ module Gopad
           id == o.id &&
           slug == o.slug &&
           username == o.username &&
+          password == o.password &&
           email == o.email &&
           admin == o.admin &&
           active == o.active &&
@@ -153,7 +162,7 @@ module Gopad
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, slug, username, email, admin, active, created_at, updated_at].hash
+      [id, slug, username, password, email, admin, active, created_at, updated_at].hash
     end
 
     # Builds the object from hash
