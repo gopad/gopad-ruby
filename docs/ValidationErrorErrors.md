@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**field** | **String** |  | [optional] 
-**message** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **field** | **String** |  | [optional] |
+| **message** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Gopad'
+require 'gopad'
 
-instance = Gopad::ValidationErrorErrors.new(field: null,
-                                 message: null)
+instance = Gopad::ValidationErrorErrors.new(
+  field: null,
+  message: null
+)
 ```
-
 

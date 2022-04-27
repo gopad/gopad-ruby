@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**username** | **String** |  | 
-**password** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **username** | **String** |  |  |
+| **password** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Gopad'
+require 'gopad'
 
-instance = Gopad::AuthLogin.new(username: null,
-                                 password: null)
+instance = Gopad::AuthLogin.new(
+  username: null,
+  password: null
+)
 ```
-
 

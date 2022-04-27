@@ -2,15 +2,6 @@
 {{> api_info}}
 =end
 
-if ENV.key? 'CODACY_PROJECT_TOKEN'
-  begin
-    require 'codacy-coverage'
-    Codacy::Reporter.start
-  rescue
-    puts "Failed to load codacy-coverage gem"
-  end
-end
-
 require '{{{gemName}}}'
 
 RSpec.configure do |config|

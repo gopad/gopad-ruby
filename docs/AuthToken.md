@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**token** | **String** |  | 
-**expires_at** | **DateTime** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **token** | **String** |  |  |
+| **expires_at** | **Time** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Gopad'
+require 'gopad'
 
-instance = Gopad::AuthToken.new(token: null,
-                                 expires_at: null)
+instance = Gopad::AuthToken.new(
+  token: null,
+  expires_at: null
+)
 ```
-
 

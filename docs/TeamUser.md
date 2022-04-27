@@ -2,20 +2,21 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**team_id** | **String** |  | 
-**user_id** | **String** |  | 
-**perm** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **team_id** | **String** |  |  |
+| **user_id** | **String** |  |  |
+| **perm** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Gopad'
+require 'gopad'
 
-instance = Gopad::TeamUser.new(team_id: null,
-                                 user_id: null,
-                                 perm: null)
+instance = Gopad::TeamUser.new(
+  team_id: null,
+  user_id: null,
+  perm: null
+)
 ```
-
 

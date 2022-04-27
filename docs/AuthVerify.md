@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**username** | **String** |  | 
-**created_at** | **DateTime** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **username** | **String** |  |  |
+| **created_at** | **Time** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Gopad'
+require 'gopad'
 
-instance = Gopad::AuthVerify.new(username: null,
-                                 created_at: null)
+instance = Gopad::AuthVerify.new(
+  username: null,
+  created_at: null
+)
 ```
-
 

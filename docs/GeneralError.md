@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**status** | **Integer** |  | 
-**message** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **status** | **Integer** |  |  |
+| **message** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Gopad'
+require 'gopad'
 
-instance = Gopad::GeneralError.new(status: null,
-                                 message: null)
+instance = Gopad::GeneralError.new(
+  status: null,
+  message: null
+)
 ```
-
 

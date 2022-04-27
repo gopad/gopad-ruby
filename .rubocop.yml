@@ -7,10 +7,6 @@ AllCops:
 Style/AndOr:
   Enabled: true
 
-Style/BracesAroundHashParameters:
-  Enabled: true
-  EnforcedStyle: context_dependent
-
 Layout/CaseIndentation:
   Enabled: true
 
@@ -32,15 +28,12 @@ Layout/EmptyLinesAroundMethodBody:
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
 
-Layout/IndentFirstArgument:
-  Enabled: true
-
 Style/HashSyntax:
   Enabled: false
 
 Layout/IndentationConsistency:
   Enabled: true
-  EnforcedStyle: rails
+  EnforcedStyle: normal
 
 Layout/IndentationWidth:
   Enabled: true
@@ -91,17 +84,8 @@ Layout/SpaceInsideHashLiteralBraces:
 Layout/SpaceInsideParens:
   Enabled: true
 
-Layout/Tab:
-  Enabled: true
-
-Layout/TrailingBlankLines:
-  Enabled: true
-
 Layout/TrailingWhitespace:
   Enabled: false
-
-Style/UnneededPercentQ:
-  Enabled: true
 
 Layout/EndAlignment:
   Enabled: true

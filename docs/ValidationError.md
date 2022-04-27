@@ -2,20 +2,21 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**status** | **Integer** |  | 
-**message** | **String** |  | 
-**errors** | [**Array&lt;ValidationErrorErrors&gt;**](ValidationErrorErrors.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **status** | **Integer** |  |  |
+| **message** | **String** |  |  |
+| **errors** | [**Array&lt;ValidationErrorErrors&gt;**](ValidationErrorErrors.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Gopad'
+require 'gopad'
 
-instance = Gopad::ValidationError.new(status: null,
-                                 message: null,
-                                 errors: null)
+instance = Gopad::ValidationError.new(
+  status: null,
+  message: null,
+  errors: null
+)
 ```
-
 
