@@ -3,7 +3,7 @@ repository:
   name: gopad-ruby
   description: "Gopad: SDK for Ruby"
   homepage: https://gopad.eu
-  topics: gopad, etherpad, sdk, openapi, ruby
+  topics: gopad, etherpad, sdk, client, grpc, ruby
 
   private: false
   has_issues: true
