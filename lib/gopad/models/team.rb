@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -14,27 +14,17 @@ require 'time'
 module Gopad
   # Model to represent team
   class Team
-    attr_accessor :id
-
-    attr_accessor :slug
-
-    attr_accessor :name
-
-    attr_accessor :created_at
-
-    attr_accessor :updated_at
-
-    attr_accessor :users
+    attr_accessor :id, :slug, :name, :created_at, :updated_at, :users
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        'id': :id,
-        'slug': :slug,
-        'name': :name,
-        'created_at': :created_at,
-        'updated_at': :updated_at,
-        'users': :users
+        id: :id,
+        slug: :slug,
+        name: :name,
+        created_at: :created_at,
+        updated_at: :updated_at,
+        users: :users
       }
     end
 
@@ -46,12 +36,12 @@ module Gopad
     # Attribute type mapping.
     def self.openapi_types
       {
-        'id': :String,
-        'slug': :String,
-        'name': :String,
-        'created_at': :Time,
-        'updated_at': :Time,
-        'users': :'Array<UserTeam>'
+        id: :String,
+        slug: :String,
+        name: :String,
+        created_at: :Time,
+        updated_at: :Time,
+        users: :'Array<UserTeam>'
       }
     end
 
@@ -100,10 +90,8 @@ module Gopad
         self.updated_at = attributes[:updated_at]
       end
 
-      if attributes.key?(:users)
-        if (value = attributes[:users]).is_a?(Array)
-          self.users = value
-        end
+      if attributes.key?(:users) && (value = attributes[:users]).is_a?(Array)
+        self.users = value
       end
     end
 
@@ -111,8 +99,7 @@ module Gopad
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = []
-      invalid_properties
+      []
     end
 
     # Check to see if the all the properties in the model are valid
@@ -163,7 +150,7 @@ module Gopad
           # check to ensure the input is an array given that the attribute
           # is documented as an array but the input is not
           if attributes[attribute_map[key]].is_a?(Array)
-            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(Regexp.last_match(1), v) }
+            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(::Regexp.last_match(1), v) }
           end
         elsif !attributes[attribute_map[key]].nil?
           transformed_hash[key.to_s] = _deserialize(type, attributes[attribute_map[key]])

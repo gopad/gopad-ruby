@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -71,9 +71,9 @@ module Gopad
           end
         end
       rescue Faraday::TimeoutError
-        raise ApiError, 'Connection timed out'
+        raise ApiError.new('Connection timed out')
       rescue Faraday::ConnectionFailed
-        raise ApiError, 'Connection failed'
+        raise ApiError.new('Connection failed')
       end
 
       data = if opts[:return_type] == 'File' || opts[:return_type] == 'Binary'
@@ -134,15 +134,15 @@ module Gopad
       elsif header_params['Content-Type'] == 'multipart/form-data'
         data = {}
         form_params.each do |key, value|
-          case value
-          when ::File, ::Tempfile
-            data[key] = Faraday::FilePart.new(value.path, Marcel::MimeType.for(Pathname.new(value.path)))
-          when ::Array, nil
-            # let Faraday handle Array and nil parameters
-            data[key] = value
-          else
-            data[key] = value.to_s
-          end
+          data[key] = case value
+                      when ::File, ::Tempfile
+                        Faraday::FilePart.new(value.path, Marcel::MimeType.for(Pathname.new(value.path)))
+                      when ::Array, nil
+                        # let Faraday handle Array and nil parameters
+                        value
+                      else
+                        value.to_s
+                      end
         end
       elsif body
         data = body.is_a?(String) ? body : body.to_json
@@ -182,10 +182,10 @@ module Gopad
         tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding: encoding)
         tempfile.write(stream.join.force_encoding(encoding))
         tempfile.close
-        config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder "\
-                            "with e.g. `FileUtils.cp(tempfile.path, '/new/file/path')` otherwise the temp file "\
-                            "will be deleted automatically with GC. It's also recommended to delete the temp file "\
-                            'explicitly with `tempfile.delete`'
+        config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder " \
+                           "with e.g. `FileUtils.cp(tempfile.path, '/new/file/path')` otherwise the temp file " \
+                           "will be deleted automatically with GC. It's also recommended to delete the temp file " \
+                           'explicitly with `tempfile.delete`'
         tempfile
       end
     end
@@ -303,11 +303,11 @@ module Gopad
         data
       when /\AArray<(.+)>\z/
         # e.g. Array<Pet>
-        sub_type = Regexp.last_match(1)
+        sub_type = ::Regexp.last_match(1)
         data.map { |item| convert_to_type(item, sub_type) }
-      when /\AHash\<String, (.+)\>\z/
+      when /\AHash<String, (.+)>\z/
         # e.g. Hash<String, Integer>
-        sub_type = Regexp.last_match(1)
+        sub_type = ::Regexp.last_match(1)
         {}.tap do |hash|
           data.each { |k, v| hash[k] = convert_to_type(v, sub_type) }
         end

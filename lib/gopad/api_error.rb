@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -22,14 +22,14 @@ module Gopad
         if arg.key?(:message) || arg.key?('message')
           super(arg[:message] || arg['message'])
         else
-          super arg
+          super
         end
 
         arg.each do |k, v|
           instance_variable_set "@#{k}", v
         end
       else
-        super arg
+        super
         @message = arg
       end
     end

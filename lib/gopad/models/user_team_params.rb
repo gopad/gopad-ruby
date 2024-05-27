@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -14,13 +14,10 @@ require 'time'
 module Gopad
   # Parameters to attach or remove user team
   class UserTeamParams
-    attr_accessor :team
-
-    attr_accessor :perm
+    attr_accessor :team, :perm
 
     class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+      attr_reader :datatype, :allowable_values
 
       def initialize(datatype, allowable_values)
         @allowable_values = allowable_values.map do |value|
@@ -43,8 +40,8 @@ module Gopad
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        'team': :team,
-        'perm': :perm
+        team: :team,
+        perm: :perm
       }
     end
 
@@ -56,8 +53,8 @@ module Gopad
     # Attribute type mapping.
     def self.openapi_types
       {
-        'team': :String,
-        'perm': :String
+        team: :String,
+        perm: :String
       }
     end
 
@@ -164,7 +161,7 @@ module Gopad
           # check to ensure the input is an array given that the attribute
           # is documented as an array but the input is not
           if attributes[attribute_map[key]].is_a?(Array)
-            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(Regexp.last_match(1), v) }
+            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(::Regexp.last_match(1), v) }
           end
         elsif !attributes[attribute_map[key]].nil?
           transformed_hash[key.to_s] = _deserialize(type, attributes[attribute_map[key]])

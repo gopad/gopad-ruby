@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.license = 'Apache-2.0'
 
   s.files = ['CHANGELOG.md', 'CONTRIBUTING.md', 'DCO', 'README.md', 'LICENSE'] + Dir.glob('lib/**/*')
-  s.test_files = Dir.glob('spec/**/*')
   s.require_paths = ['lib']
 
   s.required_ruby_version = '>= 2.6'
@@ -23,5 +22,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'faraday-multipart'
   s.add_runtime_dependency 'marcel'
 
-  s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
+  s.metadata['rubygems_mfa_required'] = 'true'
 end

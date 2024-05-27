@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -14,15 +14,13 @@ require 'time'
 module Gopad
   # General structure to show validation errors
   class Validation
-    attr_accessor :field
-
-    attr_accessor :message
+    attr_accessor :field, :message
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        'field': :field,
-        'message': :message
+        field: :field,
+        message: :message
       }
     end
 
@@ -34,8 +32,8 @@ module Gopad
     # Attribute type mapping.
     def self.openapi_types
       {
-        'field': :String,
-        'message': :String
+        field: :String,
+        message: :String
       }
     end
 
@@ -74,8 +72,7 @@ module Gopad
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = []
-      invalid_properties
+      []
     end
 
     # Check to see if the all the properties in the model are valid
@@ -122,7 +119,7 @@ module Gopad
           # check to ensure the input is an array given that the attribute
           # is documented as an array but the input is not
           if attributes[attribute_map[key]].is_a?(Array)
-            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(Regexp.last_match(1), v) }
+            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(::Regexp.last_match(1), v) }
           end
         elsif !attributes[attribute_map[key]].nil?
           transformed_hash[key.to_s] = _deserialize(type, attributes[attribute_map[key]])
