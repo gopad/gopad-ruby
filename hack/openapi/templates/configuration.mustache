@@ -148,7 +148,7 @@ module {{moduleName}}
       @debugging = false
       @inject_format = false
       @force_ending_format = false
-      @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
+      @logger = defined?(Rails) ? Rails.logger : Logger.new($stdout)
 
       yield(self) if block_given?
     end
@@ -357,7 +357,7 @@ module {{moduleName}}
       return url unless server.key? :variables
 
       # go through variable and assign a value
-      server[:variables].each do |name, variable|
+      server[:variables].each_key do |name|
         if variables.key?(name)
           if (!server[:variables][name].key?(:enum_values) || server[:variables][name][:enum_values].include?(variables[name]))
             url.gsub! "{" + name.to_s + "}", variables[name]
@@ -461,7 +461,7 @@ module {{moduleName}}
     #
     # ```
     # c.configure_session do |http|
-    #   http.plugin(:follow_redirects).with(debug: STDOUT, debug_level: 1)
+    #   http.plugin(:follow_redirects).with(debug: $stdout, debug_level: 1)
     # end
     # ```
     #

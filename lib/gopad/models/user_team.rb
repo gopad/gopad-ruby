@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -14,23 +14,10 @@ require 'time'
 module Gopad
   # Model to represent user team
   class UserTeam
-    attr_accessor :user_id
-
-    attr_accessor :user
-
-    attr_accessor :team_id
-
-    attr_accessor :team
-
-    attr_accessor :perm
-
-    attr_accessor :created_at
-
-    attr_accessor :updated_at
+    attr_accessor :user_id, :user, :team_id, :team, :perm, :created_at, :updated_at
 
     class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+      attr_reader :datatype, :allowable_values
 
       def initialize(datatype, allowable_values)
         @allowable_values = allowable_values.map do |value|
@@ -53,13 +40,13 @@ module Gopad
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        'user_id': :user_id,
-        'user': :user,
-        'team_id': :team_id,
-        'team': :team,
-        'perm': :perm,
-        'created_at': :created_at,
-        'updated_at': :updated_at
+        user_id: :user_id,
+        user: :user,
+        team_id: :team_id,
+        team: :team,
+        perm: :perm,
+        created_at: :created_at,
+        updated_at: :updated_at
       }
     end
 
@@ -71,13 +58,13 @@ module Gopad
     # Attribute type mapping.
     def self.openapi_types
       {
-        'user_id': :String,
-        'user': :User,
-        'team_id': :String,
-        'team': :Team,
-        'perm': :String,
-        'created_at': :Time,
-        'updated_at': :Time
+        user_id: :String,
+        user: :User,
+        team_id: :String,
+        team: :Team,
+        perm: :String,
+        created_at: :Time,
+        updated_at: :Time
       }
     end
 
@@ -214,7 +201,7 @@ module Gopad
           # check to ensure the input is an array given that the attribute
           # is documented as an array but the input is not
           if attributes[attribute_map[key]].is_a?(Array)
-            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(Regexp.last_match(1), v) }
+            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(::Regexp.last_match(1), v) }
           end
         elsif !attributes[attribute_map[key]].nil?
           transformed_hash[key.to_s] = _deserialize(type, attributes[attribute_map[key]])

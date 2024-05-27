@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -70,7 +70,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        operation: :"AuthApi.external_callback",
+        operation: :'AuthApi.external_callback',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,
@@ -135,7 +135,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        operation: :"AuthApi.external_initialize",
+        operation: :'AuthApi.external_initialize',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,

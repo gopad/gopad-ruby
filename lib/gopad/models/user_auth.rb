@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -14,21 +14,15 @@ require 'time'
 module Gopad
   # Model to represent user auth
   class UserAuth
-    attr_accessor :provider
-
-    attr_accessor :ref
-
-    attr_accessor :created_at
-
-    attr_accessor :updated_at
+    attr_accessor :provider, :ref, :created_at, :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        'provider': :provider,
-        'ref': :ref,
-        'created_at': :created_at,
-        'updated_at': :updated_at
+        provider: :provider,
+        ref: :ref,
+        created_at: :created_at,
+        updated_at: :updated_at
       }
     end
 
@@ -40,10 +34,10 @@ module Gopad
     # Attribute type mapping.
     def self.openapi_types
       {
-        'provider': :String,
-        'ref': :String,
-        'created_at': :Time,
-        'updated_at': :Time
+        provider: :String,
+        ref: :String,
+        created_at: :Time,
+        updated_at: :Time
       }
     end
 
@@ -90,8 +84,7 @@ module Gopad
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = []
-      invalid_properties
+      []
     end
 
     # Check to see if the all the properties in the model are valid
@@ -140,7 +133,7 @@ module Gopad
           # check to ensure the input is an array given that the attribute
           # is documented as an array but the input is not
           if attributes[attribute_map[key]].is_a?(Array)
-            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(Regexp.last_match(1), v) }
+            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(::Regexp.last_match(1), v) }
           end
         elsif !attributes[attribute_map[key]].nil?
           transformed_hash[key.to_s] = _deserialize(type, attributes[attribute_map[key]])

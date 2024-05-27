@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -14,45 +14,23 @@ require 'time'
 module Gopad
   # Model to represent user
   class User
-    attr_accessor :id
-
-    attr_accessor :username
-
-    attr_accessor :password
-
-    attr_accessor :email
-
-    attr_accessor :fullname
-
-    attr_accessor :profile
-
-    attr_accessor :admin
-
-    attr_accessor :active
-
-    attr_accessor :created_at
-
-    attr_accessor :updated_at
-
-    attr_accessor :auths
-
-    attr_accessor :teams
+    attr_accessor :id, :username, :password, :email, :fullname, :profile, :admin, :active, :created_at, :updated_at, :auths, :teams
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        'id': :id,
-        'username': :username,
-        'password': :password,
-        'email': :email,
-        'fullname': :fullname,
-        'profile': :profile,
-        'admin': :admin,
-        'active': :active,
-        'created_at': :created_at,
-        'updated_at': :updated_at,
-        'auths': :auths,
-        'teams': :teams
+        id: :id,
+        username: :username,
+        password: :password,
+        email: :email,
+        fullname: :fullname,
+        profile: :profile,
+        admin: :admin,
+        active: :active,
+        created_at: :created_at,
+        updated_at: :updated_at,
+        auths: :auths,
+        teams: :teams
       }
     end
 
@@ -64,18 +42,18 @@ module Gopad
     # Attribute type mapping.
     def self.openapi_types
       {
-        'id': :String,
-        'username': :String,
-        'password': :String,
-        'email': :String,
-        'fullname': :String,
-        'profile': :String,
-        'admin': :Boolean,
-        'active': :Boolean,
-        'created_at': :Time,
-        'updated_at': :Time,
-        'auths': :'Array<UserAuth>',
-        'teams': :'Array<UserTeam>'
+        id: :String,
+        username: :String,
+        password: :String,
+        email: :String,
+        fullname: :String,
+        profile: :String,
+        admin: :Boolean,
+        active: :Boolean,
+        created_at: :Time,
+        updated_at: :Time,
+        auths: :'Array<UserAuth>',
+        teams: :'Array<UserTeam>'
       }
     end
 
@@ -150,16 +128,12 @@ module Gopad
         self.updated_at = attributes[:updated_at]
       end
 
-      if attributes.key?(:auths)
-        if (value = attributes[:auths]).is_a?(Array)
-          self.auths = value
-        end
+      if attributes.key?(:auths) && (value = attributes[:auths]).is_a?(Array)
+        self.auths = value
       end
 
-      if attributes.key?(:teams)
-        if (value = attributes[:teams]).is_a?(Array)
-          self.teams = value
-        end
+      if attributes.key?(:teams) && (value = attributes[:teams]).is_a?(Array)
+        self.teams = value
       end
     end
 
@@ -167,8 +141,7 @@ module Gopad
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = []
-      invalid_properties
+      []
     end
 
     # Check to see if the all the properties in the model are valid
@@ -225,7 +198,7 @@ module Gopad
           # check to ensure the input is an array given that the attribute
           # is documented as an array but the input is not
           if attributes[attribute_map[key]].is_a?(Array)
-            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(Regexp.last_match(1), v) }
+            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(::Regexp.last_match(1), v) }
           end
         elsif !attributes[attribute_map[key]].nil?
           transformed_hash[key.to_s] = _deserialize(type, attributes[attribute_map[key]])

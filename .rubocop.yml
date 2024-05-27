@@ -1,9 +1,13 @@
 ---
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 2.6
 
 Naming/FileName:
   Enabled: false
+
+Layout/LineLength:
+  Max: 200
 
 Metrics/AbcSize:
   Max: 70
@@ -13,9 +17,6 @@ Metrics/MethodLength:
 
 Metrics/BlockLength:
   Max: 60
-
-Metrics/LineLength:
-  Max: 200
 
 Metrics/ClassLength:
   Max: 400
@@ -39,6 +40,12 @@ Style/IfUnlessModifier:
   Enabled: false
 
 Style/GuardClause:
+  Enabled: false
+
+Style/RaiseArgs:
+  Enabled: false
+
+Style/StringConcatenation:
   Enabled: false
 
 Layout/SpaceInsideArrayLiteralBrackets:

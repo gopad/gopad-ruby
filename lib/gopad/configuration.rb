@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -140,9 +140,7 @@ module Gopad
     # https://github.com/lostisland/faraday/tree/main/lib/faraday/encoders
     attr_accessor :params_encoder
 
-    attr_accessor :inject_format
-
-    attr_accessor :force_ending_format
+    attr_accessor :inject_format, :force_ending_format
 
     def initialize
       @scheme = 'https'
@@ -169,7 +167,7 @@ module Gopad
       @debugging = false
       @inject_format = false
       @force_ending_format = false
-      @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
+      @logger = defined?(Rails) ? Rails.logger : Logger.new($stdout)
 
       yield(self) if block_given?
     end
@@ -185,7 +183,7 @@ module Gopad
 
     def scheme=(scheme)
       # remove :// from scheme
-      @scheme = scheme.sub(%r{://}, '')
+      @scheme = scheme.sub('://', '')
     end
 
     def host=(host)
@@ -271,8 +269,7 @@ module Gopad
     end
 
     def operation_server_settings
-      {
-      }
+      {}
     end
 
     # Returns URL based on server settings
@@ -293,7 +290,7 @@ module Gopad
       return url unless server.key? :variables
 
       # go through variable and assign a value
-      server[:variables].each do |name, _variable|
+      server[:variables].each_key do |name|
         if variables.key?(name)
           if !server[:variables][name].key?(:enum_values) || server[:variables][name][:enum_values].include?(variables[name])
             url.gsub! '{' + name.to_s + '}', variables[name]
@@ -363,8 +360,8 @@ module Gopad
     # @see https://github.com/lostisland/faraday/blob/v2.3.0/lib/faraday/rack_builder.rb#L92-L143
     def set_faraday_middleware(operation, key, *args, &block)
       unless %i[request response use insert insert_before insert_after swap delete].include?(operation)
-        raise ArgumentError, "Invalid faraday middleware operation #{operation}. Must be" \
-                            ' :request, :response, :use, :insert, :insert_before, :insert_after, :swap or :delete.'
+        raise ArgumentError, "Invalid faraday middleware operation #{operation}. Must be  " \
+                             ':request, :response, :use, :insert, :insert_before, :insert_after, :swap or :delete.'
       end
 
       @middlewares[operation] << [key, args, block]

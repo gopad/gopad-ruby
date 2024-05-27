@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -14,18 +14,14 @@ require 'time'
 module Gopad
   # Model to represent user teams
   class UserTeams
-    attr_accessor :user
-
-    attr_accessor :total
-
-    attr_accessor :teams
+    attr_accessor :user, :total, :teams
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        'user': :user,
-        'total': :total,
-        'teams': :teams
+        user: :user,
+        total: :total,
+        teams: :teams
       }
     end
 
@@ -37,9 +33,9 @@ module Gopad
     # Attribute type mapping.
     def self.openapi_types
       {
-        'user': :User,
-        'total': :Integer,
-        'teams': :'Array<UserTeam>'
+        user: :User,
+        total: :Integer,
+        teams: :'Array<UserTeam>'
       }
     end
 
@@ -73,10 +69,8 @@ module Gopad
         self.total = attributes[:total]
       end
 
-      if attributes.key?(:teams)
-        if (value = attributes[:teams]).is_a?(Array)
-          self.teams = value
-        end
+      if attributes.key?(:teams) && (value = attributes[:teams]).is_a?(Array)
+        self.teams = value
       end
     end
 
@@ -84,8 +78,7 @@ module Gopad
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = []
-      invalid_properties
+      []
     end
 
     # Check to see if the all the properties in the model are valid
@@ -133,7 +126,7 @@ module Gopad
           # check to ensure the input is an array given that the attribute
           # is documented as an array but the input is not
           if attributes[attribute_map[key]].is_a?(Array)
-            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(Regexp.last_match(1), v) }
+            transformed_hash[key.to_s] = attributes[attribute_map[key]].map { |v| _deserialize(::Regexp.last_match(1), v) }
           end
         elsif !attributes[attribute_map[key]].nil?
           transformed_hash[key.to_s] = _deserialize(type, attributes[attribute_map[key]])

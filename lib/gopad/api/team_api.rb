@@ -1,4 +1,4 @@
-# #Gopad OpenAPI
+# Gopad OpenAPI
 #
 # API definition for Gopad, Etherpad for markdown with go
 #
@@ -75,7 +75,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
 
       new_options = opts.merge(
-        operation: :"TeamApi.attach_team_to_user",
+        operation: :'TeamApi.attach_team_to_user',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,
@@ -142,7 +142,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
 
       new_options = opts.merge(
-        operation: :"TeamApi.create_team",
+        operation: :'TeamApi.create_team',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,
@@ -204,7 +204,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
 
       new_options = opts.merge(
-        operation: :"TeamApi.delete_team",
+        operation: :'TeamApi.delete_team',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,
@@ -277,7 +277,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
 
       new_options = opts.merge(
-        operation: :"TeamApi.delete_team_from_user",
+        operation: :'TeamApi.delete_team_from_user',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,
@@ -364,7 +364,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
 
       new_options = opts.merge(
-        operation: :"TeamApi.list_team_users",
+        operation: :'TeamApi.list_team_users',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,
@@ -444,7 +444,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
 
       new_options = opts.merge(
-        operation: :"TeamApi.list_teams",
+        operation: :'TeamApi.list_teams',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,
@@ -517,7 +517,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
 
       new_options = opts.merge(
-        operation: :"TeamApi.permit_team_user",
+        operation: :'TeamApi.permit_team_user',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,
@@ -579,7 +579,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
 
       new_options = opts.merge(
-        operation: :"TeamApi.show_team",
+        operation: :'TeamApi.show_team',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,
@@ -652,7 +652,7 @@ module Gopad
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
 
       new_options = opts.merge(
-        operation: :"TeamApi.update_team",
+        operation: :'TeamApi.update_team',
         header_params: header_params,
         query_params: query_params,
         form_params: form_params,

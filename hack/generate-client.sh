@@ -60,6 +60,6 @@ else
 
     pushd "${ROOT}" >/dev/null
         echo "> fix code formatting"
-        bundle exec rake rubocop:auto_correct || true
+        bundle exec rake rubocop:autocorrect || true
     popd >/dev/null
 fi
