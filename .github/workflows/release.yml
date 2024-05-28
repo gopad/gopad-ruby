@@ -40,7 +40,7 @@ jobs:
             @semantic-release/changelog \
             @semantic-release/git \
             @semantic-release/github \
-            @semantic-release-rubygem \
+            semantic-release-rubygem \
             semantic-release-replace-plugin
 
       - name: Run releaser
