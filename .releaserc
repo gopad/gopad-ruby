@@ -110,9 +110,74 @@
             }
         ],
         [
-            "@semantic-release/exec",
+            "semantic-release-replace-plugin",
             {
-                "prepareCmd": "./hack/semantic-version.sh ${nextRelease.version} && ./hack/generate-client.sh"
+                "replacements": [
+                    {
+                        "files": [
+                            "openapi.yml"
+                        ],
+                        "from": "gemVersion: .*",
+                        "to": "gemVersion: ${nextRelease.version}",
+                        "results": [
+                            {
+                                "file": "openapi.yml",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
+                    },
+                    {
+                        "files": [
+                            "README.md"
+                        ],
+                        "from": "Package version: .*",
+                        "to": "Package version: ${nextRelease.version}",
+                        "results": [
+                            {
+                                "file": "README.md",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
+                    },
+                    {
+                        "files": [
+                            "README.md"
+                        ],
+                        "from": "gopad-.*\.gem",
+                        "to": "gopad-${nextRelease.version}.gem",
+                        "results": [
+                            {
+                                "file": "README.md",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
+                    },
+                    {
+                        "files": [
+                            "README.md"
+                        ],
+                        "from": "gem 'gopad', '~> .*'",
+                        "to": "gem 'gopad', '~> ${nextRelease.version}'",
+                        "results": [
+                            {
+                                "file": "README.md",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
+                    }
+                ]
             }
         ],
         [
@@ -127,15 +192,11 @@
             {
                 "message": "chore: release ${nextRelease.version}",
                 "assets": [
-                    "Gemfile",
-                    "Gemfile.lock",
-                    "gopad.gemspec",
                     "CHANGELOG.md",
-                    "README.md",
+                    "Gemfile.lock",
                     "openapi.yml",
-                    "docs/*",
-                    "lib/*",
-                    "spec/*"
+                    "README.md",
+                    "lib/gopad/version.rb"
                 ]
             }
         ],

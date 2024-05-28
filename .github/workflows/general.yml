@@ -22,8 +22,14 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Install generator
+        run: npm install @openapitools/openapi-generator-cli -g
+
       - name: Install dependencies
         run: bundle install
+
+      - name: Run generate
+        run: bash hack/generate-client.sh
 
       - name: Run rubocop
         run: bundle exec rake rubocop

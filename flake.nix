@@ -47,6 +47,10 @@
                   package = pkgs.ruby_3_3;
                 };
               };
+
+              packages = with pkgs; [
+                openapi-generator-cli
+              ];
             };
           };
         };

@@ -8,6 +8,7 @@ name: release
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   release:
@@ -19,24 +20,34 @@ jobs:
         with:
           token: ${{ secrets.BOT_ACCESS_TOKEN }}
 
+      - name: Setup nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
 
-      - name: Install generator
-        run: npm install @openapitools/openapi-generator-cli -g
+      - name: Install releaser
+        run: |
+          npm install -g \
+            conventional-changelog-conventionalcommits@6.1.0 \
+            semantic-release \
+            @semantic-release/commit-analyzer \
+            @semantic-release/release-notes-generator \
+            @semantic-release/changelog \
+            @semantic-release/git \
+            @semantic-release/github \
+            @semantic-release-rubygem \
+            semantic-release-replace-plugin
 
-      - name: Semantic release
-        uses: cycjimmy/semantic-release-action@v3
+      - name: Run releaser
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
           GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_TOKEN }}
-        with:
-          extra_plugins: |
-            semantic-release-rubygem
-            @semantic-release/exec
-            conventional-changelog-conventionalcommits@6.1.0
+        run: semantic-release
 
       - name: Write buildtime
         run: date >| .github/RELEASE
