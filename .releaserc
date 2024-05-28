@@ -176,6 +176,22 @@
                             }
                         ],
                         "countMatches": true
+                    },
+                    {
+                        "files": [
+                            "Gemfile.lock"
+                        ],
+                        "from": "gopad (.*)",
+                        "to": "gopad (${nextRelease.version})",
+                        "results": [
+                            {
+                                "file": "Gemfile.lock",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
                     }
                 ]
             }
@@ -183,7 +199,7 @@
         [
             "semantic-release-rubygem",
             {
-                "updateGemfileLock": true,
+                "updateGemfileLock": false,
                 "gemPublish": true
             }
         ],
