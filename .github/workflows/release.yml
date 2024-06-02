@@ -35,11 +35,8 @@ jobs:
           npm install -g \
             conventional-changelog-conventionalcommits@6.1.0 \
             semantic-release \
-            @semantic-release/commit-analyzer \
-            @semantic-release/release-notes-generator \
             @semantic-release/changelog \
             @semantic-release/git \
-            @semantic-release/github \
             semantic-release-rubygem \
             semantic-release-replace-plugin
 
