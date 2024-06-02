@@ -234,13 +234,6 @@ module Gopad
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
-        'Cookie' =>
-          {
-            type: 'api_key',
-            in: 'header',
-            key: 'Cookie',
-            value: api_key_with_prefix('Cookie')
-          },
         'Header' =>
           {
             type: 'api_key',
@@ -248,12 +241,26 @@ module Gopad
             key: 'X-API-Key',
             value: api_key_with_prefix('Header')
           },
+        'Bearer' =>
+          {
+            type: 'bearer',
+            in: 'header',
+            key: 'Authorization',
+            value: "Bearer #{access_token_with_refresh}"
+          },
         'Basic' =>
           {
             type: 'basic',
             in: 'header',
             key: 'Authorization',
             value: basic_auth_token
+          },
+        'Cookie' =>
+          {
+            type: 'api_key',
+            in: 'header',
+            key: 'Cookie',
+            value: api_key_with_prefix('Cookie')
           }
       }
     end

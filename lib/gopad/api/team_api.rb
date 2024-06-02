@@ -72,7 +72,7 @@ module Gopad
       return_type = opts[:debug_return_type] || 'Notification'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
 
       new_options = opts.merge(
         operation: :'TeamApi.attach_team_to_user',
@@ -139,7 +139,7 @@ module Gopad
       return_type = opts[:debug_return_type] || 'Team'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
 
       new_options = opts.merge(
         operation: :'TeamApi.create_team',
@@ -201,7 +201,7 @@ module Gopad
       return_type = opts[:debug_return_type] || 'Notification'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
 
       new_options = opts.merge(
         operation: :'TeamApi.delete_team',
@@ -274,7 +274,7 @@ module Gopad
       return_type = opts[:debug_return_type] || 'Notification'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
 
       new_options = opts.merge(
         operation: :'TeamApi.delete_team_from_user',
@@ -297,10 +297,10 @@ module Gopad
     # @param team_id [String] A team identifier or slug
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
-    # @option opts [String] :sort Sorting column
-    # @option opts [String] :order Sorting order
-    # @option opts [Integer] :limit Paging limit
-    # @option opts [Integer] :offset Paging offset
+    # @option opts [String] :sort Sorting column (default to 'username')
+    # @option opts [String] :order Sorting order (default to 'asc')
+    # @option opts [Integer] :limit Paging limit (default to 100)
+    # @option opts [Integer] :offset Paging offset (default to 0)
     # @return [TeamUsers]
     def list_team_users(team_id, opts = {})
       data, _status_code, _headers = list_team_users_with_http_info(team_id, opts)
@@ -311,10 +311,10 @@ module Gopad
     # @param team_id [String] A team identifier or slug
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
-    # @option opts [String] :sort Sorting column
-    # @option opts [String] :order Sorting order
-    # @option opts [Integer] :limit Paging limit
-    # @option opts [Integer] :offset Paging offset
+    # @option opts [String] :sort Sorting column (default to 'username')
+    # @option opts [String] :order Sorting order (default to 'asc')
+    # @option opts [Integer] :limit Paging limit (default to 100)
+    # @option opts [Integer] :offset Paging offset (default to 0)
     # @return [Array<(TeamUsers, Integer, Hash)>] TeamUsers data, response status code and response headers
     def list_team_users_with_http_info(team_id, opts = {})
       if @api_client.config.debugging
@@ -361,7 +361,7 @@ module Gopad
       return_type = opts[:debug_return_type] || 'TeamUsers'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
 
       new_options = opts.merge(
         operation: :'TeamApi.list_team_users',
@@ -383,10 +383,10 @@ module Gopad
     # Fetch all available teams
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
-    # @option opts [String] :sort Sorting column
-    # @option opts [String] :order Sorting order
-    # @option opts [Integer] :limit Paging limit
-    # @option opts [Integer] :offset Paging offset
+    # @option opts [String] :sort Sorting column (default to 'name')
+    # @option opts [String] :order Sorting order (default to 'asc')
+    # @option opts [Integer] :limit Paging limit (default to 100)
+    # @option opts [Integer] :offset Paging offset (default to 0)
     # @return [Teams]
     def list_teams(opts = {})
       data, _status_code, _headers = list_teams_with_http_info(opts)
@@ -396,10 +396,10 @@ module Gopad
     # Fetch all available teams
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
-    # @option opts [String] :sort Sorting column
-    # @option opts [String] :order Sorting order
-    # @option opts [Integer] :limit Paging limit
-    # @option opts [Integer] :offset Paging offset
+    # @option opts [String] :sort Sorting column (default to 'name')
+    # @option opts [String] :order Sorting order (default to 'asc')
+    # @option opts [Integer] :limit Paging limit (default to 100)
+    # @option opts [Integer] :offset Paging offset (default to 0)
     # @return [Array<(Teams, Integer, Hash)>] Teams data, response status code and response headers
     def list_teams_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -441,7 +441,7 @@ module Gopad
       return_type = opts[:debug_return_type] || 'Teams'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
 
       new_options = opts.merge(
         operation: :'TeamApi.list_teams',
@@ -514,7 +514,7 @@ module Gopad
       return_type = opts[:debug_return_type] || 'Notification'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
 
       new_options = opts.merge(
         operation: :'TeamApi.permit_team_user',
@@ -576,7 +576,7 @@ module Gopad
       return_type = opts[:debug_return_type] || 'Team'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
 
       new_options = opts.merge(
         operation: :'TeamApi.show_team',
@@ -649,7 +649,7 @@ module Gopad
       return_type = opts[:debug_return_type] || 'Team'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header]
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
 
       new_options = opts.merge(
         operation: :'TeamApi.update_team',

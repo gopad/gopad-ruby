@@ -15,7 +15,11 @@ require 'gopad/version'
 require 'gopad/configuration'
 
 # Models
+require 'gopad/models/auth_login'
+require 'gopad/models/auth_token'
+require 'gopad/models/auth_verify'
 require 'gopad/models/notification'
+require 'gopad/models/profile'
 require 'gopad/models/team'
 require 'gopad/models/team_user_params'
 require 'gopad/models/team_users'
@@ -30,6 +34,7 @@ require 'gopad/models/validation'
 
 # APIs
 require 'gopad/api/auth_api'
+require 'gopad/api/profile_api'
 require 'gopad/api/team_api'
 require 'gopad/api/user_api'
 

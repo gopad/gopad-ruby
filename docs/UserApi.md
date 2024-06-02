@@ -41,6 +41,9 @@ Gopad.configure do |config|
   config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['Header'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
@@ -87,7 +90,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header)
+[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -121,6 +124,9 @@ Gopad.configure do |config|
   config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['Header'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
@@ -165,7 +171,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header)
+[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -199,6 +205,9 @@ Gopad.configure do |config|
   config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['Header'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
@@ -243,7 +252,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header)
+[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -277,6 +286,9 @@ Gopad.configure do |config|
   config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['Header'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
@@ -323,7 +335,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header)
+[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -357,6 +369,9 @@ Gopad.configure do |config|
   config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['Header'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
@@ -402,8 +417,8 @@ end
 | ---- | ---- | ----------- | ----- |
 | **user_id** | **String** | A user identifier or slug |  |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional] |
-| **order** | **String** | Sorting order | [optional] |
+| **sort** | **String** | Sorting column | [optional][default to &#39;name&#39;] |
+| **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
 | **limit** | **Integer** | Paging limit | [optional] |
 | **offset** | **Integer** | Paging offset | [optional] |
 
@@ -413,7 +428,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header)
+[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -447,6 +462,9 @@ Gopad.configure do |config|
   config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['Header'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
@@ -490,10 +508,10 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional] |
-| **order** | **String** | Sorting order | [optional] |
-| **limit** | **Integer** | Paging limit | [optional] |
-| **offset** | **Integer** | Paging offset | [optional] |
+| **sort** | **String** | Sorting column | [optional][default to &#39;username&#39;] |
+| **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
+| **limit** | **Integer** | Paging limit | [optional][default to 100] |
+| **offset** | **Integer** | Paging offset | [optional][default to 0] |
 
 ### Return type
 
@@ -501,7 +519,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header)
+[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -535,6 +553,9 @@ Gopad.configure do |config|
   config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['Header'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
@@ -581,7 +602,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header)
+[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -615,6 +636,9 @@ Gopad.configure do |config|
   config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['Header'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
@@ -659,7 +683,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header)
+[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -693,6 +717,9 @@ Gopad.configure do |config|
   config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['Header'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
@@ -739,7 +766,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header)
+[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 

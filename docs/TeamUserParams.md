@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **user** | **String** |  |  |
-| **perm** | **String** |  | [optional] |
+| **perm** | **String** |  | [optional][default to &#39;user&#39;] |
 
 ## Example
 

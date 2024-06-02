@@ -150,5 +150,182 @@ module Gopad
       end
       [data, status_code, headers]
     end
+
+    # Authenticate an user by credentials
+    # @param auth_login [AuthLogin] The credentials to authenticate
+    # @param [Hash] opts the optional parameters
+    # @return [AuthToken]
+    def login_auth(auth_login, opts = {})
+      data, _status_code, _headers = login_auth_with_http_info(auth_login, opts)
+      data
+    end
+
+    # Authenticate an user by credentials
+    # @param auth_login [AuthLogin] The credentials to authenticate
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AuthToken, Integer, Hash)>] AuthToken data, response status code and response headers
+    def login_auth_with_http_info(auth_login, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: AuthApi.login_auth ...'
+      end
+      # verify the required parameter 'auth_login' is set
+      if @api_client.config.client_side_validation && auth_login.nil?
+        raise ArgumentError, "Missing the required parameter 'auth_login' when calling AuthApi.login_auth"
+      end
+
+      # resource path
+      local_var_path = '/auth/login'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      unless content_type.nil?
+        header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(auth_login)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AuthToken'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        operation: :'AuthApi.login_auth',
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AuthApi#login_auth\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Refresh an auth token before it expires
+    # @param [Hash] opts the optional parameters
+    # @return [AuthToken]
+    def refresh_auth(opts = {})
+      data, _status_code, _headers = refresh_auth_with_http_info(opts)
+      data
+    end
+
+    # Refresh an auth token before it expires
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AuthToken, Integer, Hash)>] AuthToken data, response status code and response headers
+    def refresh_auth_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: AuthApi.refresh_auth ...'
+      end
+      # resource path
+      local_var_path = '/auth/refresh'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AuthToken'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
+
+      new_options = opts.merge(
+        operation: :'AuthApi.refresh_auth',
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AuthApi#refresh_auth\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Verify validity for an authentication token
+    # @param [Hash] opts the optional parameters
+    # @return [AuthVerify]
+    def verify_auth(opts = {})
+      data, _status_code, _headers = verify_auth_with_http_info(opts)
+      data
+    end
+
+    # Verify validity for an authentication token
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AuthVerify, Integer, Hash)>] AuthVerify data, response status code and response headers
+    def verify_auth_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: AuthApi.verify_auth ...'
+      end
+      # resource path
+      local_var_path = '/auth/verify'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AuthVerify'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
+
+      new_options = opts.merge(
+        operation: :'AuthApi.verify_auth',
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AuthApi#verify_auth\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
   end
 end
