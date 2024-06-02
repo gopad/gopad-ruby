@@ -12,41 +12,25 @@ require 'date'
 require 'time'
 
 module Gopad
-  # Model to represent user team
-  class UserTeam
-    attr_accessor :user_id, :user, :team_id, :team, :perm, :created_at, :updated_at
-
-    class EnumAttributeValidator
-      attr_reader :datatype, :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+  # Model to represent profile
+  class Profile
+    attr_accessor :id, :username, :password, :email, :fullname, :profile, :admin, :active, :created_at, :updated_at, :auths, :teams
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        user_id: :user_id,
-        user: :user,
-        team_id: :team_id,
-        team: :team,
-        perm: :perm,
+        id: :id,
+        username: :username,
+        password: :password,
+        email: :email,
+        fullname: :fullname,
+        profile: :profile,
+        admin: :admin,
+        active: :active,
         created_at: :created_at,
-        updated_at: :updated_at
+        updated_at: :updated_at,
+        auths: :auths,
+        teams: :teams
       }
     end
 
@@ -58,19 +42,31 @@ module Gopad
     # Attribute type mapping.
     def self.openapi_types
       {
-        user_id: :String,
-        user: :User,
-        team_id: :String,
-        team: :Team,
-        perm: :String,
+        id: :String,
+        username: :String,
+        password: :String,
+        email: :String,
+        fullname: :String,
+        profile: :String,
+        admin: :Boolean,
+        active: :Boolean,
         created_at: :Time,
-        updated_at: :Time
+        updated_at: :Time,
+        auths: :'Array<UserAuth>',
+        teams: :'Array<UserTeam>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
-      Set.new([
+      Set.new(%i[
+                username
+                password
+                email
+                fullname
+                profile
+                auths
+                teams
               ])
     end
 
@@ -78,39 +74,49 @@ module Gopad
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       unless attributes.is_a?(Hash)
-        raise ArgumentError, 'The input argument (attributes) must be a hash in `Gopad::UserTeam` initialize method'
+        raise ArgumentError, 'The input argument (attributes) must be a hash in `Gopad::Profile` initialize method'
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) do |(k, v), h|
         unless self.class.attribute_map.key?(k.to_sym)
-          raise ArgumentError, "`#{k}` is not a valid attribute in `Gopad::UserTeam`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          raise ArgumentError, "`#{k}` is not a valid attribute in `Gopad::Profile`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
 
         h[k.to_sym] = v
       end
 
-      self.user_id = if attributes.key?(:user_id)
-                       attributes[:user_id]
-                     end
-
-      if attributes.key?(:user)
-        self.user = attributes[:user]
+      if attributes.key?(:id)
+        self.id = attributes[:id]
       end
 
-      self.team_id = if attributes.key?(:team_id)
-                       attributes[:team_id]
-                     end
-
-      if attributes.key?(:team)
-        self.team = attributes[:team]
+      if attributes.key?(:username)
+        self.username = attributes[:username]
       end
 
-      self.perm = if attributes.key?(:perm)
-                    attributes[:perm]
-                  else
-                    'user'
-                  end
+      if attributes.key?(:password)
+        self.password = attributes[:password]
+      end
+
+      if attributes.key?(:email)
+        self.email = attributes[:email]
+      end
+
+      if attributes.key?(:fullname)
+        self.fullname = attributes[:fullname]
+      end
+
+      if attributes.key?(:profile)
+        self.profile = attributes[:profile]
+      end
+
+      if attributes.key?(:admin)
+        self.admin = attributes[:admin]
+      end
+
+      if attributes.key?(:active)
+        self.active = attributes[:active]
+      end
 
       if attributes.key?(:created_at)
         self.created_at = attributes[:created_at]
@@ -119,46 +125,28 @@ module Gopad
       if attributes.key?(:updated_at)
         self.updated_at = attributes[:updated_at]
       end
+
+      if attributes.key?(:auths) && (value = attributes[:auths]).is_a?(Array)
+        self.auths = value
+      end
+
+      if attributes.key?(:teams) && (value = attributes[:teams]).is_a?(Array)
+        self.teams = value
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = []
-      if @user_id.nil?
-        invalid_properties.push('invalid value for "user_id", user_id cannot be nil.')
-      end
-
-      if @team_id.nil?
-        invalid_properties.push('invalid value for "team_id", team_id cannot be nil.')
-      end
-
-      invalid_properties
+      []
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @user_id.nil?
-      return false if @team_id.nil?
-
-      perm_validator = EnumAttributeValidator.new('String', %w[user admin owner])
-      return false unless perm_validator.valid?(@perm)
-
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] perm Object to be assigned
-    def perm=(perm)
-      validator = EnumAttributeValidator.new('String', %w[user admin owner])
-      unless validator.valid?(perm)
-        raise ArgumentError, "invalid value for \"perm\", must be one of #{validator.allowable_values}."
-      end
-
-      @perm = perm
     end
 
     # Checks equality by comparing each attribute.
@@ -167,13 +155,18 @@ module Gopad
       return true if equal?(other)
 
       self.class == other.class &&
-        user_id == other.user_id &&
-        user == other.user &&
-        team_id == other.team_id &&
-        team == other.team &&
-        perm == other.perm &&
+        id == other.id &&
+        username == other.username &&
+        password == other.password &&
+        email == other.email &&
+        fullname == other.fullname &&
+        profile == other.profile &&
+        admin == other.admin &&
+        active == other.active &&
         created_at == other.created_at &&
-        updated_at == other.updated_at
+        updated_at == other.updated_at &&
+        auths == other.auths &&
+        teams == other.teams
     end
 
     # @see the `==` method
@@ -185,7 +178,7 @@ module Gopad
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [user_id, user, team_id, team, perm, created_at, updated_at].hash
+      [id, username, password, email, fullname, profile, admin, active, created_at, updated_at, auths, teams].hash
     end
 
     # Builds the object from hash

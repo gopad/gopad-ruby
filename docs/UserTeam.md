@@ -8,7 +8,7 @@
 | **user** | [**User**](User.md) |  | [optional] |
 | **team_id** | **String** |  |  |
 | **team** | [**Team**](Team.md) |  | [optional] |
-| **perm** | **String** |  | [optional] |
+| **perm** | **String** |  | [optional][default to &#39;user&#39;] |
 | **created_at** | **Time** |  | [optional][readonly] |
 | **updated_at** | **Time** |  | [optional][readonly] |
 

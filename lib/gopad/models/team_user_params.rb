@@ -84,9 +84,11 @@ module Gopad
                     attributes[:user]
                   end
 
-      if attributes.key?(:perm)
-        self.perm = attributes[:perm]
-      end
+      self.perm = if attributes.key?(:perm)
+                    attributes[:perm]
+                  else
+                    'user'
+                  end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
