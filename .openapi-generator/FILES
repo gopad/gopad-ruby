@@ -48,9 +48,4 @@ lib/gopad/models/user_teams.rb
 lib/gopad/models/users.rb
 lib/gopad/models/validation.rb
 lib/gopad/version.rb
-spec/api/profile_api_spec.rb
-spec/models/auth_login_spec.rb
-spec/models/auth_token_spec.rb
-spec/models/auth_verify_spec.rb
-spec/models/profile_spec.rb
 spec/spec_helper.rb
