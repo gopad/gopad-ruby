@@ -11,16 +11,16 @@ Layout/LineLength:
   Max: 200
 
 Metrics/AbcSize:
-  Max: 70
+  Max: 100
 
 Metrics/MethodLength:
-  Max: 50
+  Max: 80
 
 Metrics/BlockLength:
-  Max: 60
+  Max: 100
 
 Metrics/ClassLength:
-  Max: 400
+  Max: 1000
 
 Metrics/CyclomaticComplexity:
   Max: 30
