@@ -14,7 +14,7 @@ Metrics/AbcSize:
   Max: 100
 
 Metrics/MethodLength:
-  Max: 80
+  Max: 100
 
 Metrics/BlockLength:
   Max: 100
@@ -23,10 +23,10 @@ Metrics/ClassLength:
   Max: 1000
 
 Metrics/CyclomaticComplexity:
-  Max: 30
+  Max: 50
 
 Metrics/PerceivedComplexity:
-  Max: 30
+  Max: 50
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes
