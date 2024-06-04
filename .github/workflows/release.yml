@@ -37,7 +37,7 @@ jobs:
             semantic-release@23.1.1 \
             @semantic-release/changelog \
             @semantic-release/git \
-            semantic-release-rubygem \
+            @webhippie/semantic-release-rubygem \
             semantic-release-replace-plugin
 
       - name: Run releaser

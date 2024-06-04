@@ -197,10 +197,11 @@
             }
         ],
         [
-            "semantic-release-rubygem",
+            "@webhippie/semantic-release-rubygem",
             {
                 "updateGemfileLock": false,
-                "gemPublish": true
+                "gemPublish": true,
+                "versionGlob": "lib/*/version.rb"
             }
         ],
         [
