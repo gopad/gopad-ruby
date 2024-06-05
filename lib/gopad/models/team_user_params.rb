@@ -12,7 +12,7 @@ require 'date'
 require 'time'
 
 module Gopad
-  # Parameters to attach or remove team user
+  # Parameters to attach or unlink team user
   class TeamUserParams
     attr_accessor :user, :perm
 

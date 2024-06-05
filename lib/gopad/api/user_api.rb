@@ -18,7 +18,7 @@ module Gopad
       @api_client = api_client
     end
 
-    # Assign a team to user
+    # Attach a team to user
     # @param user_id [String] A user identifier or slug
     # @param user_team_params [UserTeamParams] The user team data to attach
     # @param [Hash] opts the optional parameters
@@ -28,7 +28,7 @@ module Gopad
       data
     end
 
-    # Assign a team to user
+    # Attach a team to user
     # @param user_id [String] A user identifier or slug
     # @param user_team_params [UserTeamParams] The user team data to attach
     # @param [Hash] opts the optional parameters
@@ -220,9 +220,9 @@ module Gopad
       [data, status_code, headers]
     end
 
-    # Remove a team from user
+    # Unlink a team from user
     # @param user_id [String] A user identifier or slug
-    # @param user_team_params [UserTeamParams] The user team data to delete
+    # @param user_team_params [UserTeamParams] The user team data to unlink
     # @param [Hash] opts the optional parameters
     # @return [Notification]
     def delete_user_from_team(user_id, user_team_params, opts = {})
@@ -230,9 +230,9 @@ module Gopad
       data
     end
 
-    # Remove a team from user
+    # Unlink a team from user
     # @param user_id [String] A user identifier or slug
-    # @param user_team_params [UserTeamParams] The user team data to delete
+    # @param user_team_params [UserTeamParams] The user team data to unlink
     # @param [Hash] opts the optional parameters
     # @return [Array<(Notification, Integer, Hash)>] Notification data, response status code and response headers
     def delete_user_from_team_with_http_info(user_id, user_team_params, opts = {})
@@ -293,7 +293,7 @@ module Gopad
       [data, status_code, headers]
     end
 
-    # Fetch all teams assigned to user
+    # Fetch all teams attached to user
     # @param user_id [String] A user identifier or slug
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
@@ -307,7 +307,7 @@ module Gopad
       data
     end
 
-    # Fetch all teams assigned to user
+    # Fetch all teams attached to user
     # @param user_id [String] A user identifier or slug
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
