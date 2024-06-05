@@ -4,11 +4,11 @@ All URIs are relative to *https://try.gopad.eu/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**attach_user_to_team**](UserApi.md#attach_user_to_team) | **POST** /users/{user_id}/teams | Assign a team to user |
+| [**attach_user_to_team**](UserApi.md#attach_user_to_team) | **POST** /users/{user_id}/teams | Attach a team to user |
 | [**create_user**](UserApi.md#create_user) | **POST** /users | Create a new user |
 | [**delete_user**](UserApi.md#delete_user) | **DELETE** /users/{user_id} | Delete a specific user |
-| [**delete_user_from_team**](UserApi.md#delete_user_from_team) | **DELETE** /users/{user_id}/teams | Remove a team from user |
-| [**list_user_teams**](UserApi.md#list_user_teams) | **GET** /users/{user_id}/teams | Fetch all teams assigned to user |
+| [**delete_user_from_team**](UserApi.md#delete_user_from_team) | **DELETE** /users/{user_id}/teams | Unlink a team from user |
+| [**list_user_teams**](UserApi.md#list_user_teams) | **GET** /users/{user_id}/teams | Fetch all teams attached to user |
 | [**list_users**](UserApi.md#list_users) | **GET** /users | Fetch all available users |
 | [**permit_user_team**](UserApi.md#permit_user_team) | **PUT** /users/{user_id}/teams | Update team perms for user |
 | [**show_user**](UserApi.md#show_user) | **GET** /users/{user_id} | Fetch a specific user |
@@ -19,7 +19,7 @@ All URIs are relative to *https://try.gopad.eu/api/v1*
 
 > <Notification> attach_user_to_team(user_id, user_team_params)
 
-Assign a team to user
+Attach a team to user
 
 ### Examples
 
@@ -51,7 +51,7 @@ user_id = 'user_id_example' # String | A user identifier or slug
 user_team_params = Gopad::UserTeamParams.new({team: 'team_example'}) # UserTeamParams | The user team data to attach
 
 begin
-  # Assign a team to user
+  # Attach a team to user
   result = api_instance.attach_user_to_team(user_id, user_team_params)
   p result
 rescue Gopad::ApiError => e
@@ -67,7 +67,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Assign a team to user
+  # Attach a team to user
   data, status_code, headers = api_instance.attach_user_to_team_with_http_info(user_id, user_team_params)
   p status_code # => 2xx
   p headers # => { ... }
@@ -264,7 +264,7 @@ end
 
 > <Notification> delete_user_from_team(user_id, user_team_params)
 
-Remove a team from user
+Unlink a team from user
 
 ### Examples
 
@@ -293,10 +293,10 @@ end
 
 api_instance = Gopad::UserApi.new
 user_id = 'user_id_example' # String | A user identifier or slug
-user_team_params = Gopad::UserTeamParams.new({team: 'team_example'}) # UserTeamParams | The user team data to delete
+user_team_params = Gopad::UserTeamParams.new({team: 'team_example'}) # UserTeamParams | The user team data to unlink
 
 begin
-  # Remove a team from user
+  # Unlink a team from user
   result = api_instance.delete_user_from_team(user_id, user_team_params)
   p result
 rescue Gopad::ApiError => e
@@ -312,7 +312,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Remove a team from user
+  # Unlink a team from user
   data, status_code, headers = api_instance.delete_user_from_team_with_http_info(user_id, user_team_params)
   p status_code # => 2xx
   p headers # => { ... }
@@ -327,7 +327,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **user_id** | **String** | A user identifier or slug |  |
-| **user_team_params** | [**UserTeamParams**](UserTeamParams.md) | The user team data to delete |  |
+| **user_team_params** | [**UserTeamParams**](UserTeamParams.md) | The user team data to unlink |  |
 
 ### Return type
 
@@ -347,7 +347,7 @@ end
 
 > <UserTeams> list_user_teams(user_id, opts)
 
-Fetch all teams assigned to user
+Fetch all teams attached to user
 
 ### Examples
 
@@ -385,7 +385,7 @@ opts = {
 }
 
 begin
-  # Fetch all teams assigned to user
+  # Fetch all teams attached to user
   result = api_instance.list_user_teams(user_id, opts)
   p result
 rescue Gopad::ApiError => e
@@ -401,7 +401,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Fetch all teams assigned to user
+  # Fetch all teams attached to user
   data, status_code, headers = api_instance.list_user_teams_with_http_info(user_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
