@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/gopad/gopad-ruby/compare/v1.1.0...v1.2.0) (2024-06-10)
+
+
+### Features
+
+* automated openapi client update ([89ff356](https://github.com/gopad/gopad-ruby/commit/89ff356438e6b49bb0e29058c87d66c740359bb4))
+
 ## [1.1.0](https://github.com/gopad/gopad-ruby/compare/v1.0.0...v1.1.0) (2024-06-02)
 
 
