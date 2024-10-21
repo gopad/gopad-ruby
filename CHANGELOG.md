@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/gopad/gopad-ruby/compare/v1.5.2...v1.6.0) (2024-10-21)
+
+
+### Features
+
+* **deps:** update dependency rubocop to '~> 1.67.0' ([ab858bf](https://github.com/gopad/gopad-ruby/commit/ab858bf9ea44e577a87a7e40a6175d1f8445e3d9))
+
 ## [1.5.2](https://github.com/gopad/gopad-ruby/compare/v1.5.1...v1.5.2) (2024-09-30)
 
 
