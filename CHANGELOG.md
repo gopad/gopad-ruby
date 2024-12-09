@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/gopad/gopad-ruby/compare/v1.8.0...v1.8.1) (2024-12-09)
+
+
+### Bugfixes
+
+* **deps:** update dependency rubocop to v1.69.1 ([#82](https://github.com/gopad/gopad-ruby/issues/82)) ([d13a937](https://github.com/gopad/gopad-ruby/commit/d13a93753c065e6690df30d258ff775dedf7deaf))
+
 ## [1.8.0](https://github.com/gopad/gopad-ruby/compare/v1.7.1...v1.8.0) (2024-12-02)
 
 
