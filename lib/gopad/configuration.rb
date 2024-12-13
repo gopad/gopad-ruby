@@ -367,7 +367,7 @@ module Gopad
     # @see https://github.com/lostisland/faraday/blob/v2.3.0/lib/faraday/rack_builder.rb#L92-L143
     def set_faraday_middleware(operation, key, *args, &block)
       unless %i[request response use insert insert_before insert_after swap delete].include?(operation)
-        raise ArgumentError, "Invalid faraday middleware operation #{operation}. Must be  " \
+        raise ArgumentError, "Invalid faraday middleware operation #{operation}. Must be " \
                              ':request, :response, :use, :insert, :insert_before, :insert_after, :swap or :delete.'
       end
 
