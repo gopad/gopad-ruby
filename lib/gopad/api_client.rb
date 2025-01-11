@@ -51,7 +51,7 @@ module Gopad
       begin
         response = connection(opts).public_send(http_method.to_sym.downcase) do |req|
           request = build_request(http_method, path, req, opts)
-          stream = download_file(request) if opts[:return_type] == 'File' || opts[:return_type] == 'Binary'
+          stream = download_file(request) if %w[File Binary].include?(opts[:return_type])
         end
 
         if config.debugging
@@ -76,7 +76,7 @@ module Gopad
         raise ApiError.new('Connection failed')
       end
 
-      data = if opts[:return_type] == 'File' || opts[:return_type] == 'Binary'
+      data = if %w[File Binary].include?(opts[:return_type])
                deserialize_file(response, stream)
              elsif opts[:return_type]
                deserialize(response, opts[:return_type])
