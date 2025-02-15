@@ -1,13 +1,15 @@
-.direnv
-.devenv
+.direnv/
+.devenv/
 
-vendor
-doc
-gems
-pkg
+vendor/
+doc/
+gems/
+pkg/
 
-.yardoc
-.bundle
+.yardoc/
+.bundle/
 
 *.gem
 *.rbc
+
+.pre-commit-config.yaml
