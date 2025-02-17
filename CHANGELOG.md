@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.13.0](https://github.com/gopad/gopad-ruby/compare/v1.12.2...v1.13.0) (2025-02-17)
+
+
+### Features
+
+* **deps:** update dependency rubocop to '~> 1.72.0' ([#93](https://github.com/gopad/gopad-ruby/issues/93)) ([8f0be37](https://github.com/gopad/gopad-ruby/commit/8f0be372ae458c9051050aad4e6a01d65ae63386))
+
+
+### Bugfixes
+
+* **deps:** update dependency rexml to v3.4.1 ([#96](https://github.com/gopad/gopad-ruby/issues/96)) ([26d74e7](https://github.com/gopad/gopad-ruby/commit/26d74e7c75c355e9e33ad4334edf292d2e1065dc))
+* **deps:** update dependency rubocop to v1.72.1 ([#95](https://github.com/gopad/gopad-ruby/issues/95)) ([7be209f](https://github.com/gopad/gopad-ruby/commit/7be209f2f79b06e99d204b3f54d88c1f3274c9f1))
+* **deps:** update dependency ruby to v3.4.2 ([#94](https://github.com/gopad/gopad-ruby/issues/94)) ([9bbe6e1](https://github.com/gopad/gopad-ruby/commit/9bbe6e12927d4331063561eb225899ed741ebd84))
+
 ## [1.12.2](https://github.com/gopad/gopad-ruby/compare/v1.12.1...v1.12.2) (2025-02-10)
 
 
