@@ -22,19 +22,14 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
@@ -79,7 +74,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -100,19 +95,14 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
@@ -157,7 +147,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -167,7 +157,7 @@ This endpoint does not need any parameter.
 
 ## update_profile
 
-> <Profile> update_profile(profile)
+> <Profile> update_profile(update_profile_request)
 
 Update your own profile information
 
@@ -176,13 +166,27 @@ Update your own profile information
 ```ruby
 require 'time'
 require 'gopad'
+# setup authorization
+Gopad.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
 
 api_instance = Gopad::ProfileApi.new
-profile = Gopad::Profile.new # Profile | The profile data to update
+update_profile_request = Gopad::UpdateProfileRequest.new # UpdateProfileRequest | The profile data to update
 
 begin
   # Update your own profile information
-  result = api_instance.update_profile(profile)
+  result = api_instance.update_profile(update_profile_request)
   p result
 rescue Gopad::ApiError => e
   puts "Error when calling ProfileApi->update_profile: #{e}"
@@ -193,12 +197,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Profile>, Integer, Hash)> update_profile_with_http_info(profile)
+> <Array(<Profile>, Integer, Hash)> update_profile_with_http_info(update_profile_request)
 
 ```ruby
 begin
   # Update your own profile information
-  data, status_code, headers = api_instance.update_profile_with_http_info(profile)
+  data, status_code, headers = api_instance.update_profile_with_http_info(update_profile_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Profile>
@@ -211,7 +215,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **profile** | [**Profile**](Profile.md) | The profile data to update |  |
+| **update_profile_request** | [**UpdateProfileRequest**](UpdateProfileRequest.md) | The profile data to update |  |
 
 ### Return type
 
@@ -219,7 +223,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **String** |  | [optional][readonly] |
+| **id** | **String** |  | [optional] |
 | **username** | **String** |  | [optional] |
 | **password** | **String** |  | [optional] |
 | **email** | **String** |  | [optional] |
@@ -15,7 +15,7 @@
 | **created_at** | **Time** |  | [optional][readonly] |
 | **updated_at** | **Time** |  | [optional][readonly] |
 | **auths** | [**Array&lt;UserAuth&gt;**](UserAuth.md) |  | [optional][readonly] |
-| **teams** | [**Array&lt;UserTeam&gt;**](UserTeam.md) |  | [optional][readonly] |
+| **groups** | [**Array&lt;UserGroup&gt;**](UserGroup.md) |  | [optional][readonly] |
 
 ## Example
 
@@ -34,7 +34,7 @@ instance = Gopad::Profile.new(
   created_at: null,
   updated_at: null,
   auths: null,
-  teams: null
+  groups: null
 )
 ```
 
