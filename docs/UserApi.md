@@ -4,22 +4,22 @@ All URIs are relative to *https://try.gopad.eu/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**attach_user_to_team**](UserApi.md#attach_user_to_team) | **POST** /users/{user_id}/teams | Attach a team to user |
+| [**attach_user_to_group**](UserApi.md#attach_user_to_group) | **POST** /users/{user_id}/groups | Attach a group to user |
 | [**create_user**](UserApi.md#create_user) | **POST** /users | Create a new user |
 | [**delete_user**](UserApi.md#delete_user) | **DELETE** /users/{user_id} | Delete a specific user |
-| [**delete_user_from_team**](UserApi.md#delete_user_from_team) | **DELETE** /users/{user_id}/teams | Unlink a team from user |
-| [**list_user_teams**](UserApi.md#list_user_teams) | **GET** /users/{user_id}/teams | Fetch all teams attached to user |
+| [**delete_user_from_group**](UserApi.md#delete_user_from_group) | **DELETE** /users/{user_id}/groups | Unlink a group from user |
+| [**list_user_groups**](UserApi.md#list_user_groups) | **GET** /users/{user_id}/groups | Fetch all groups attached to user |
 | [**list_users**](UserApi.md#list_users) | **GET** /users | Fetch all available users |
-| [**permit_user_team**](UserApi.md#permit_user_team) | **PUT** /users/{user_id}/teams | Update team perms for user |
+| [**permit_user_group**](UserApi.md#permit_user_group) | **PUT** /users/{user_id}/groups | Update group perms for user |
 | [**show_user**](UserApi.md#show_user) | **GET** /users/{user_id} | Fetch a specific user |
 | [**update_user**](UserApi.md#update_user) | **PUT** /users/{user_id} | Update a specific user |
 
 
-## attach_user_to_team
+## attach_user_to_group
 
-> <Notification> attach_user_to_team(user_id, user_team_params)
+> <Notification> attach_user_to_group(user_id, permit_user_group_request)
 
-Attach a team to user
+Attach a group to user
 
 ### Examples
 
@@ -28,52 +28,47 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
-user_team_params = Gopad::UserTeamParams.new({team: 'team_example'}) # UserTeamParams | The user team data to attach
+user_id = '"jdoe"' # String | A user identifier or slug
+permit_user_group_request = Gopad::PermitUserGroupRequest.new({group: 'group_example', perm: 'perm_example'}) # PermitUserGroupRequest | The user group data to permit
 
 begin
-  # Attach a team to user
-  result = api_instance.attach_user_to_team(user_id, user_team_params)
+  # Attach a group to user
+  result = api_instance.attach_user_to_group(user_id, permit_user_group_request)
   p result
 rescue Gopad::ApiError => e
-  puts "Error when calling UserApi->attach_user_to_team: #{e}"
+  puts "Error when calling UserApi->attach_user_to_group: #{e}"
 end
 ```
 
-#### Using the attach_user_to_team_with_http_info variant
+#### Using the attach_user_to_group_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> attach_user_to_team_with_http_info(user_id, user_team_params)
+> <Array(<Notification>, Integer, Hash)> attach_user_to_group_with_http_info(user_id, permit_user_group_request)
 
 ```ruby
 begin
-  # Attach a team to user
-  data, status_code, headers = api_instance.attach_user_to_team_with_http_info(user_id, user_team_params)
+  # Attach a group to user
+  data, status_code, headers = api_instance.attach_user_to_group_with_http_info(user_id, permit_user_group_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
 rescue Gopad::ApiError => e
-  puts "Error when calling UserApi->attach_user_to_team_with_http_info: #{e}"
+  puts "Error when calling UserApi->attach_user_to_group_with_http_info: #{e}"
 end
 ```
 
@@ -82,7 +77,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **user_id** | **String** | A user identifier or slug |  |
-| **user_team_params** | [**UserTeamParams**](UserTeamParams.md) | The user team data to attach |  |
+| **permit_user_group_request** | [**PermitUserGroupRequest**](PermitUserGroupRequest.md) | The user group data to permit |  |
 
 ### Return type
 
@@ -90,7 +85,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -100,7 +95,7 @@ end
 
 ## create_user
 
-> <User> create_user(user)
+> <User> create_user(create_user_request)
 
 Create a new user
 
@@ -111,30 +106,25 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
-user = Gopad::User.new # User | The user data to create
+create_user_request = Gopad::CreateUserRequest.new # CreateUserRequest | The user data to create
 
 begin
   # Create a new user
-  result = api_instance.create_user(user)
+  result = api_instance.create_user(create_user_request)
   p result
 rescue Gopad::ApiError => e
   puts "Error when calling UserApi->create_user: #{e}"
@@ -145,12 +135,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<User>, Integer, Hash)> create_user_with_http_info(user)
+> <Array(<User>, Integer, Hash)> create_user_with_http_info(create_user_request)
 
 ```ruby
 begin
   # Create a new user
-  data, status_code, headers = api_instance.create_user_with_http_info(user)
+  data, status_code, headers = api_instance.create_user_with_http_info(create_user_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <User>
@@ -163,7 +153,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user** | [**User**](User.md) | The user data to create |  |
+| **create_user_request** | [**CreateUserRequest**](CreateUserRequest.md) | The user data to create |  |
 
 ### Return type
 
@@ -171,7 +161,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -192,26 +182,21 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 
 begin
   # Delete a specific user
@@ -252,7 +237,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -260,11 +245,11 @@ end
 - **Accept**: application/json
 
 
-## delete_user_from_team
+## delete_user_from_group
 
-> <Notification> delete_user_from_team(user_id, user_team_params)
+> <Notification> delete_user_from_group(user_id, delete_user_from_group_request)
 
-Unlink a team from user
+Unlink a group from user
 
 ### Examples
 
@@ -273,52 +258,47 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
-user_team_params = Gopad::UserTeamParams.new({team: 'team_example'}) # UserTeamParams | The user team data to unlink
+user_id = '"jdoe"' # String | A user identifier or slug
+delete_user_from_group_request = Gopad::DeleteUserFromGroupRequest.new({group: 'group_example'}) # DeleteUserFromGroupRequest | The user group data to unlink
 
 begin
-  # Unlink a team from user
-  result = api_instance.delete_user_from_team(user_id, user_team_params)
+  # Unlink a group from user
+  result = api_instance.delete_user_from_group(user_id, delete_user_from_group_request)
   p result
 rescue Gopad::ApiError => e
-  puts "Error when calling UserApi->delete_user_from_team: #{e}"
+  puts "Error when calling UserApi->delete_user_from_group: #{e}"
 end
 ```
 
-#### Using the delete_user_from_team_with_http_info variant
+#### Using the delete_user_from_group_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> delete_user_from_team_with_http_info(user_id, user_team_params)
+> <Array(<Notification>, Integer, Hash)> delete_user_from_group_with_http_info(user_id, delete_user_from_group_request)
 
 ```ruby
 begin
-  # Unlink a team from user
-  data, status_code, headers = api_instance.delete_user_from_team_with_http_info(user_id, user_team_params)
+  # Unlink a group from user
+  data, status_code, headers = api_instance.delete_user_from_group_with_http_info(user_id, delete_user_from_group_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
 rescue Gopad::ApiError => e
-  puts "Error when calling UserApi->delete_user_from_team_with_http_info: #{e}"
+  puts "Error when calling UserApi->delete_user_from_group_with_http_info: #{e}"
 end
 ```
 
@@ -327,7 +307,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **user_id** | **String** | A user identifier or slug |  |
-| **user_team_params** | [**UserTeamParams**](UserTeamParams.md) | The user team data to unlink |  |
+| **delete_user_from_group_request** | [**DeleteUserFromGroupRequest**](DeleteUserFromGroupRequest.md) | The user group data to unlink |  |
 
 ### Return type
 
@@ -335,7 +315,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -343,11 +323,11 @@ end
 - **Accept**: application/json
 
 
-## list_user_teams
+## list_user_groups
 
-> <UserTeams> list_user_teams(user_id, opts)
+> <ListUserGroups200Response> list_user_groups(user_id, opts)
 
-Fetch all teams attached to user
+Fetch all groups attached to user
 
 ### Examples
 
@@ -356,58 +336,53 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 opts = {
-  search: '"John Doe"', # String | Search query
-  sort: 'slug', # String | Sorting column
+  search: 'search_example', # String | Search query
+  sort: 'sort_example', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
 }
 
 begin
-  # Fetch all teams attached to user
-  result = api_instance.list_user_teams(user_id, opts)
+  # Fetch all groups attached to user
+  result = api_instance.list_user_groups(user_id, opts)
   p result
 rescue Gopad::ApiError => e
-  puts "Error when calling UserApi->list_user_teams: #{e}"
+  puts "Error when calling UserApi->list_user_groups: #{e}"
 end
 ```
 
-#### Using the list_user_teams_with_http_info variant
+#### Using the list_user_groups_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UserTeams>, Integer, Hash)> list_user_teams_with_http_info(user_id, opts)
+> <Array(<ListUserGroups200Response>, Integer, Hash)> list_user_groups_with_http_info(user_id, opts)
 
 ```ruby
 begin
-  # Fetch all teams attached to user
-  data, status_code, headers = api_instance.list_user_teams_with_http_info(user_id, opts)
+  # Fetch all groups attached to user
+  data, status_code, headers = api_instance.list_user_groups_with_http_info(user_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UserTeams>
+  p data # => <ListUserGroups200Response>
 rescue Gopad::ApiError => e
-  puts "Error when calling UserApi->list_user_teams_with_http_info: #{e}"
+  puts "Error when calling UserApi->list_user_groups_with_http_info: #{e}"
 end
 ```
 
@@ -417,18 +392,18 @@ end
 | ---- | ---- | ----------- | ----- |
 | **user_id** | **String** | A user identifier or slug |  |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;name&#39;] |
+| **sort** | **String** | Sorting column | [optional] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
-| **limit** | **Integer** | Paging limit | [optional] |
-| **offset** | **Integer** | Paging offset | [optional] |
+| **limit** | **Integer** | Paging limit | [optional][default to 100] |
+| **offset** | **Integer** | Paging offset | [optional][default to 0] |
 
 ### Return type
 
-[**UserTeams**](UserTeams.md)
+[**ListUserGroups200Response**](ListUserGroups200Response.md)
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -438,7 +413,7 @@ end
 
 ## list_users
 
-> <Users> list_users(opts)
+> <ListUsers200Response> list_users(opts)
 
 Fetch all available users
 
@@ -449,19 +424,14 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
@@ -469,8 +439,8 @@ end
 
 api_instance = Gopad::UserApi.new
 opts = {
-  search: '"John Doe"', # String | Search query
-  sort: 'username', # String | Sorting column
+  search: 'search_example', # String | Search query
+  sort: 'sort_example', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -489,7 +459,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Users>, Integer, Hash)> list_users_with_http_info(opts)
+> <Array(<ListUsers200Response>, Integer, Hash)> list_users_with_http_info(opts)
 
 ```ruby
 begin
@@ -497,7 +467,7 @@ begin
   data, status_code, headers = api_instance.list_users_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Users>
+  p data # => <ListUsers200Response>
 rescue Gopad::ApiError => e
   puts "Error when calling UserApi->list_users_with_http_info: #{e}"
 end
@@ -508,18 +478,18 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;username&#39;] |
+| **sort** | **String** | Sorting column | [optional] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
 | **limit** | **Integer** | Paging limit | [optional][default to 100] |
 | **offset** | **Integer** | Paging offset | [optional][default to 0] |
 
 ### Return type
 
-[**Users**](Users.md)
+[**ListUsers200Response**](ListUsers200Response.md)
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -527,11 +497,11 @@ end
 - **Accept**: application/json
 
 
-## permit_user_team
+## permit_user_group
 
-> <Notification> permit_user_team(user_id, user_team_params)
+> <Notification> permit_user_group(user_id, permit_user_group_request)
 
-Update team perms for user
+Update group perms for user
 
 ### Examples
 
@@ -540,52 +510,47 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
-user_team_params = Gopad::UserTeamParams.new({team: 'team_example'}) # UserTeamParams | The user team data to update
+user_id = '"jdoe"' # String | A user identifier or slug
+permit_user_group_request = Gopad::PermitUserGroupRequest.new({group: 'group_example', perm: 'perm_example'}) # PermitUserGroupRequest | The user group data to permit
 
 begin
-  # Update team perms for user
-  result = api_instance.permit_user_team(user_id, user_team_params)
+  # Update group perms for user
+  result = api_instance.permit_user_group(user_id, permit_user_group_request)
   p result
 rescue Gopad::ApiError => e
-  puts "Error when calling UserApi->permit_user_team: #{e}"
+  puts "Error when calling UserApi->permit_user_group: #{e}"
 end
 ```
 
-#### Using the permit_user_team_with_http_info variant
+#### Using the permit_user_group_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> permit_user_team_with_http_info(user_id, user_team_params)
+> <Array(<Notification>, Integer, Hash)> permit_user_group_with_http_info(user_id, permit_user_group_request)
 
 ```ruby
 begin
-  # Update team perms for user
-  data, status_code, headers = api_instance.permit_user_team_with_http_info(user_id, user_team_params)
+  # Update group perms for user
+  data, status_code, headers = api_instance.permit_user_group_with_http_info(user_id, permit_user_group_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
 rescue Gopad::ApiError => e
-  puts "Error when calling UserApi->permit_user_team_with_http_info: #{e}"
+  puts "Error when calling UserApi->permit_user_group_with_http_info: #{e}"
 end
 ```
 
@@ -594,7 +559,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **user_id** | **String** | A user identifier or slug |  |
-| **user_team_params** | [**UserTeamParams**](UserTeamParams.md) | The user team data to update |  |
+| **permit_user_group_request** | [**PermitUserGroupRequest**](PermitUserGroupRequest.md) | The user group data to permit |  |
 
 ### Return type
 
@@ -602,7 +567,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -623,26 +588,21 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 
 begin
   # Fetch a specific user
@@ -683,7 +643,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -693,7 +653,7 @@ end
 
 ## update_user
 
-> <User> update_user(user_id, user)
+> <User> update_user(user_id, update_user_request)
 
 Update a specific user
 
@@ -704,31 +664,26 @@ require 'time'
 require 'gopad'
 # setup authorization
 Gopad.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Gopad::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
-user = Gopad::User.new # User | The user data to update
+user_id = '"jdoe"' # String | A user identifier or slug
+update_user_request = Gopad::UpdateUserRequest.new # UpdateUserRequest | The user data to update
 
 begin
   # Update a specific user
-  result = api_instance.update_user(user_id, user)
+  result = api_instance.update_user(user_id, update_user_request)
   p result
 rescue Gopad::ApiError => e
   puts "Error when calling UserApi->update_user: #{e}"
@@ -739,12 +694,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<User>, Integer, Hash)> update_user_with_http_info(user_id, user)
+> <Array(<User>, Integer, Hash)> update_user_with_http_info(user_id, update_user_request)
 
 ```ruby
 begin
   # Update a specific user
-  data, status_code, headers = api_instance.update_user_with_http_info(user_id, user)
+  data, status_code, headers = api_instance.update_user_with_http_info(user_id, update_user_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <User>
@@ -758,7 +713,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **user_id** | **String** | A user identifier or slug |  |
-| **user** | [**User**](User.md) | The user data to update |  |
+| **update_user_request** | [**UpdateUserRequest**](UpdateUserRequest.md) | The user data to update |  |
 
 ### Return type
 
@@ -766,7 +721,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
