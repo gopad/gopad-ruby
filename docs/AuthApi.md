@@ -218,9 +218,9 @@ Gopad.configure do |config|
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-API-Key'] = 'Bearer'
+  # config.api_key_prefix['Header'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
@@ -352,9 +352,9 @@ Gopad.configure do |config|
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  config.api_key['Header'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-API-Key'] = 'Bearer'
+  # config.api_key_prefix['Header'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
