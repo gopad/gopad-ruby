@@ -216,7 +216,11 @@ module Gopad
       when :Float
         value.to_f
       when :Boolean
-        value.to_s =~ /\A(true|t|yes|y|1)\z/i || false
+        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
+          true
+        else
+          false
+        end
       when :Object
         # generic object (usually a Hash), return directly
         value
