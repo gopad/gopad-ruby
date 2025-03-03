@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.15.0](https://github.com/gopad/gopad-ruby/compare/v1.14.0...v1.15.0) (2025-03-03)
+
+
+### Features
+
+* automated openapi client update ([810a73d](https://github.com/gopad/gopad-ruby/commit/810a73d6f836d3e1e414c5a9420acb5862c13873))
+* automated openapi client update ([08954c7](https://github.com/gopad/gopad-ruby/commit/08954c79afb52398dda7c332992667b40066c767))
+* **deps:** update dependency rubocop to '~> 1.73.0' ([#100](https://github.com/gopad/gopad-ruby/issues/100)) ([ae8c1a3](https://github.com/gopad/gopad-ruby/commit/ae8c1a375fde95390cb9f3e4f7e5c31ce5cba287))
+
+
+### Bugfixes
+
+* **deps:** update dependency rubocop to v1.73.1 ([#102](https://github.com/gopad/gopad-ruby/issues/102)) ([09f4318](https://github.com/gopad/gopad-ruby/commit/09f43184b7a4a309d65f1b723a150e7abd0d6ee0))
+
 ## [1.14.0](https://github.com/gopad/gopad-ruby/compare/v1.13.0...v1.14.0) (2025-02-24)
 
 
