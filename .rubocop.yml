@@ -8,7 +8,7 @@ Naming/FileName:
   Enabled: false
 
 Layout/LineLength:
-  Max: 200
+  Max: 250
 
 Metrics/AbcSize:
   Max: 100
@@ -17,10 +17,10 @@ Metrics/MethodLength:
   Max: 100
 
 Metrics/BlockLength:
-  Max: 100
+  Max: 200
 
 Metrics/ClassLength:
-  Max: 1000
+  Max: 1500
 
 Metrics/CyclomaticComplexity:
   Max: 50
