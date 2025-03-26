@@ -13,3 +13,4 @@ pkg/
 *.rbc
 
 .pre-commit-config.yaml
+openapitools.json
