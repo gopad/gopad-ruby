@@ -7,6 +7,7 @@ All URIs are relative to *https://try.gopad.eu/api/v1*
 | [**callback_provider**](AuthApi.md#callback_provider) | **GET** /auth/{provider}/callback | Callback to parse the defined provider |
 | [**list_providers**](AuthApi.md#list_providers) | **GET** /auth/providers | Fetch the available auth providers |
 | [**login_auth**](AuthApi.md#login_auth) | **POST** /auth/login | Authenticate an user by credentials |
+| [**redirect_auth**](AuthApi.md#redirect_auth) | **POST** /auth/redirect | Retrieve real token after redirect |
 | [**refresh_auth**](AuthApi.md#refresh_auth) | **GET** /auth/refresh | Refresh an auth token before it expires |
 | [**request_provider**](AuthApi.md#request_provider) | **GET** /auth/{provider}/request | Request the redirect to defined provider |
 | [**verify_auth**](AuthApi.md#verify_auth) | **GET** /auth/verify | Verify validity for an authentication token |
@@ -200,6 +201,68 @@ No authorization required
 - **Accept**: application/json
 
 
+## redirect_auth
+
+> <AuthToken> redirect_auth(redirect_auth_request)
+
+Retrieve real token after redirect
+
+### Examples
+
+```ruby
+require 'time'
+require 'gopad'
+
+api_instance = Gopad::AuthApi.new
+redirect_auth_request = Gopad::RedirectAuthRequest.new({token: 'token_example'}) # RedirectAuthRequest | The redirect token to authenticate
+
+begin
+  # Retrieve real token after redirect
+  result = api_instance.redirect_auth(redirect_auth_request)
+  p result
+rescue Gopad::ApiError => e
+  puts "Error when calling AuthApi->redirect_auth: #{e}"
+end
+```
+
+#### Using the redirect_auth_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<AuthToken>, Integer, Hash)> redirect_auth_with_http_info(redirect_auth_request)
+
+```ruby
+begin
+  # Retrieve real token after redirect
+  data, status_code, headers = api_instance.redirect_auth_with_http_info(redirect_auth_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <AuthToken>
+rescue Gopad::ApiError => e
+  puts "Error when calling AuthApi->redirect_auth_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **redirect_auth_request** | [**RedirectAuthRequest**](RedirectAuthRequest.md) | The redirect token to authenticate |  |
+
+### Return type
+
+[**AuthToken**](AuthToken.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## refresh_auth
 
 > <AuthToken> refresh_auth
@@ -218,9 +281,9 @@ Gopad.configure do |config|
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
@@ -352,9 +415,9 @@ Gopad.configure do |config|
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'

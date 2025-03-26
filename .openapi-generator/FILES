@@ -24,6 +24,7 @@ docs/PermitUserGroupRequest.md
 docs/Profile.md
 docs/ProfileApi.md
 docs/Provider.md
+docs/RedirectAuthRequest.md
 docs/UpdateProfileRequest.md
 docs/UpdateUserRequest.md
 docs/User.md
@@ -57,6 +58,7 @@ lib/gopad/models/permit_group_user_request.rb
 lib/gopad/models/permit_user_group_request.rb
 lib/gopad/models/profile.rb
 lib/gopad/models/provider.rb
+lib/gopad/models/redirect_auth_request.rb
 lib/gopad/models/update_profile_request.rb
 lib/gopad/models/update_user_request.rb
 lib/gopad/models/user.rb

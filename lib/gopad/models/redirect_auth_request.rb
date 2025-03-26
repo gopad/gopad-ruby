@@ -12,15 +12,13 @@ require 'date'
 require 'time'
 
 module Gopad
-  # General structure to show validation errors
-  class Validation
-    attr_accessor :field, :message
+  class RedirectAuthRequest
+    attr_accessor :token
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        field: :field,
-        message: :message
+        token: :token
       }
     end
 
@@ -32,8 +30,7 @@ module Gopad
     # Attribute type mapping.
     def self.openapi_types
       {
-        field: :String,
-        message: :String
+        token: :String
       }
     end
 
@@ -47,38 +44,41 @@ module Gopad
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       unless attributes.is_a?(Hash)
-        raise ArgumentError, 'The input argument (attributes) must be a hash in `Gopad::Validation` initialize method'
+        raise ArgumentError, 'The input argument (attributes) must be a hash in `Gopad::RedirectAuthRequest` initialize method'
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) do |(k, v), h|
         unless self.class.attribute_map.key?(k.to_sym)
-          raise ArgumentError, "`#{k}` is not a valid attribute in `Gopad::Validation`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          raise ArgumentError, "`#{k}` is not a valid attribute in `Gopad::RedirectAuthRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
 
         h[k.to_sym] = v
       end
 
-      if attributes.key?(:field)
-        self.field = attributes[:field]
-      end
-
-      if attributes.key?(:message)
-        self.message = attributes[:message]
-      end
+      self.token = if attributes.key?(:token)
+                     attributes[:token]
+                   end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      []
+      invalid_properties = []
+      if @token.nil?
+        invalid_properties.push('invalid value for "token", token cannot be nil.')
+      end
+
+      invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @token.nil?
+
       true
     end
 
@@ -88,8 +88,7 @@ module Gopad
       return true if equal?(other)
 
       self.class == other.class &&
-        field == other.field &&
-        message == other.message
+        token == other.token
     end
 
     # @see the `==` method
@@ -101,7 +100,7 @@ module Gopad
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [field, message].hash
+      [token].hash
     end
 
     # Builds the object from hash
