@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.17.0](https://github.com/gopad/gopad-ruby/compare/v1.16.0...v1.17.0) (2025-03-31)
+
+
+### Features
+
+* **deps:** update dependency pry-byebug to v3.11.0 ([c5fb879](https://github.com/gopad/gopad-ruby/commit/c5fb879122ae0d663fd26ff33d2c8f332c4f6db5))
+* **deps:** update dependency rubocop to '~> 1.75.0' ([#108](https://github.com/gopad/gopad-ruby/issues/108)) ([fd2f126](https://github.com/gopad/gopad-ruby/commit/fd2f126ad3524c320d4d10e4a598118ee876c0e0))
+
+
+### Bugfixes
+
+* **deps:** update dependency rubocop to v1.75.1 ([#109](https://github.com/gopad/gopad-ruby/issues/109)) ([337b258](https://github.com/gopad/gopad-ruby/commit/337b2583b349472d1a56f51d0f2f71d2f77a634e))
+* use correct spec and update definition ([2c29d57](https://github.com/gopad/gopad-ruby/commit/2c29d57815033ff6c4bc63ec29708d3feb66c473))
+
 ## [1.16.0](https://github.com/gopad/gopad-ruby/compare/v1.15.1...v1.16.0) (2025-03-17)
 
 
