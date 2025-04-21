@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.2](https://github.com/gopad/gopad-ruby/compare/v1.17.1...v1.17.2) (2025-04-21)
+
+
+### Bugfixes
+
+* **deps:** update dependency ruby to v3.4.3 ([#112](https://github.com/gopad/gopad-ruby/issues/112)) ([ae6a894](https://github.com/gopad/gopad-ruby/commit/ae6a894bcd7bed72f7f4145edb56618a545fa874))
+
 ## [1.17.1](https://github.com/gopad/gopad-ruby/compare/v1.17.0...v1.17.1) (2025-04-07)
 
 
