@@ -325,7 +325,7 @@ end
 
 ## list_group_users
 
-> <ListGroupUsers200Response> list_group_users(group_id, opts)
+> <InlineObject2> list_group_users(group_id, opts)
 
 Fetch all users attached to group
 
@@ -372,7 +372,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListGroupUsers200Response>, Integer, Hash)> list_group_users_with_http_info(group_id, opts)
+> <Array(<InlineObject2>, Integer, Hash)> list_group_users_with_http_info(group_id, opts)
 
 ```ruby
 begin
@@ -380,7 +380,7 @@ begin
   data, status_code, headers = api_instance.list_group_users_with_http_info(group_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListGroupUsers200Response>
+  p data # => <InlineObject2>
 rescue Gopad::ApiError => e
   puts "Error when calling GroupApi->list_group_users_with_http_info: #{e}"
 end
@@ -399,7 +399,7 @@ end
 
 ### Return type
 
-[**ListGroupUsers200Response**](ListGroupUsers200Response.md)
+[**InlineObject2**](InlineObject2.md)
 
 ### Authorization
 
@@ -413,7 +413,7 @@ end
 
 ## list_groups
 
-> <ListGroups200Response> list_groups(opts)
+> <InlineObject1> list_groups(opts)
 
 Fetch all available groups
 
@@ -459,7 +459,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListGroups200Response>, Integer, Hash)> list_groups_with_http_info(opts)
+> <Array(<InlineObject1>, Integer, Hash)> list_groups_with_http_info(opts)
 
 ```ruby
 begin
@@ -467,7 +467,7 @@ begin
   data, status_code, headers = api_instance.list_groups_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListGroups200Response>
+  p data # => <InlineObject1>
 rescue Gopad::ApiError => e
   puts "Error when calling GroupApi->list_groups_with_http_info: #{e}"
 end
@@ -485,7 +485,7 @@ end
 
 ### Return type
 
-[**ListGroups200Response**](ListGroups200Response.md)
+[**InlineObject1**](InlineObject1.md)
 
 ### Authorization
 

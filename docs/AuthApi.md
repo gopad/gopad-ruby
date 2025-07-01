@@ -82,7 +82,7 @@ No authorization required
 
 ## list_providers
 
-> <ListProviders200Response> list_providers
+> <InlineObject> list_providers
 
 Fetch the available auth providers
 
@@ -107,7 +107,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListProviders200Response>, Integer, Hash)> list_providers_with_http_info
+> <Array(<InlineObject>, Integer, Hash)> list_providers_with_http_info
 
 ```ruby
 begin
@@ -115,7 +115,7 @@ begin
   data, status_code, headers = api_instance.list_providers_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListProviders200Response>
+  p data # => <InlineObject>
 rescue Gopad::ApiError => e
   puts "Error when calling AuthApi->list_providers_with_http_info: #{e}"
 end
@@ -127,7 +127,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ListProviders200Response**](ListProviders200Response.md)
+[**InlineObject**](InlineObject.md)
 
 ### Authorization
 
