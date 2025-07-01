@@ -35,9 +35,6 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Install generator
-        run: npm install @openapitools/openapi-generator-cli@2.20.6 -g
-
       - name: Run install
         run: bundle install
 
