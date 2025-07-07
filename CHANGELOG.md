@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.22.0](https://github.com/gopad/gopad-ruby/compare/v1.21.0...v1.22.0) (2025-07-07)
+
+
+### Features
+
+* upgrade all definitions ([eebd96a](https://github.com/gopad/gopad-ruby/commit/eebd96ae7367fca0075969468d3265655e5a464f))
+
+
+### Bugfixes
+
+* get all tests working again ([a4370ba](https://github.com/gopad/gopad-ruby/commit/a4370ba5662d7a40486c27fc0ec662ecaf2d955e))
+
 ## [1.21.0](https://github.com/gopad/gopad-ruby/compare/v1.20.1...v1.21.0) (2025-06-23)
 
 
