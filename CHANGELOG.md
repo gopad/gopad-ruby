@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.0](https://github.com/gopad/gopad-ruby/compare/v1.22.0...v1.23.0) (2025-07-14)
+
+
+### Features
+
+* **deps:** update dependency rubocop to '~> 1.78.0' ([#130](https://github.com/gopad/gopad-ruby/issues/130)) ([14301a9](https://github.com/gopad/gopad-ruby/commit/14301a99b7fb76ab1b2c776836cabe7c97c20d07))
+
 ## [1.22.0](https://github.com/gopad/gopad-ruby/compare/v1.21.0...v1.22.0) (2025-07-07)
 
 
