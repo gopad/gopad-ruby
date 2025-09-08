@@ -9,5 +9,5 @@
 #
 
 module Gopad
-  VERSION = '1.25.1'.freeze
+  VERSION = '1.25.2'.freeze
 end
