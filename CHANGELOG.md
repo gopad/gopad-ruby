@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.26.3](https://github.com/gopad/gopad-ruby/compare/v1.26.2...v1.26.3) (2025-11-03)
+
+
+### Bugfixes
+
+* **deps:** update dependency rake to v13.3.1 ([#151](https://github.com/gopad/gopad-ruby/issues/151)) ([f84664d](https://github.com/gopad/gopad-ruby/commit/f84664d8324b8a6aa48d14802aa3613ffe665a96))
+* **deps:** update dependency rubocop to v1.81.7 ([#152](https://github.com/gopad/gopad-ruby/issues/152)) ([f067642](https://github.com/gopad/gopad-ruby/commit/f067642f02557fd35bc8777dc91ebcc25778f14c))
+
 ## [1.26.2](https://github.com/gopad/gopad-ruby/compare/v1.26.1...v1.26.2) (2025-10-27)
 
 
