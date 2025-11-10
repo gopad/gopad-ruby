@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = ['CHANGELOG.md', 'CONTRIBUTING.md', 'DCO', 'README.md', 'LICENSE'] + Dir.glob('lib/**/*')
   s.require_paths = ['lib']
 
-  s.required_ruby_version = '>= 2.6'
+  s.required_ruby_version = '>= 2.8'
 
   s.add_dependency 'faraday', '~> 2.9.0'
   s.add_dependency 'faraday-multipart', '~> 1.0.4'
