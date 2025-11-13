@@ -39,6 +39,7 @@ lib/gopad/api/profile_api.rb
 lib/gopad/api/user_api.rb
 lib/gopad/api_client.rb
 lib/gopad/api_error.rb
+lib/gopad/api_model_base.rb
 lib/gopad/configuration.rb
 lib/gopad/models/auth_token.rb
 lib/gopad/models/auth_verify.rb
