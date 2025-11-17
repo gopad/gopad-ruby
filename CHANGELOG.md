@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.0](https://github.com/gopad/gopad-ruby/compare/v1.26.3...v2.0.0) (2025-11-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* increase minimum required ruby version 3.0
+* increase minimum required ruby version
+
+### Features
+
+* automated openapi client update ([bf33ec7](https://github.com/gopad/gopad-ruby/commit/bf33ec7b8f7752a64c9955b67665c6aec82c44d1))
+* increase minimum required ruby version ([5a7fbf2](https://github.com/gopad/gopad-ruby/commit/5a7fbf2be8afd4dbc87f4a2e8fc89f2551c9a2a0))
+* increase minimum required ruby version 3.0 ([e13eb4e](https://github.com/gopad/gopad-ruby/commit/e13eb4e7d19e614335ae038ebc94d468a067e69a))
+
 ## [1.26.3](https://github.com/gopad/gopad-ruby/compare/v1.26.2...v1.26.3) (2025-11-03)
 
 
