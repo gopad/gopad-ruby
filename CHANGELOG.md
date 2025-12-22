@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://github.com/gopad/gopad-ruby/compare/v2.0.0...v2.1.0) (2025-12-22)
+
+
+### Features
+
+* **minor:** update dependency rubocop to '~> 1.82.0' ([#167](https://github.com/gopad/gopad-ruby/issues/167)) ([050b192](https://github.com/gopad/gopad-ruby/commit/050b1921b96dc2e89a8b7b6a081f32ffc0c4f2ab))
+
+
+### Bugfixes
+
+* **patch:** update dependency ruby to v3.4.8 ([#166](https://github.com/gopad/gopad-ruby/issues/166)) ([d52e1c1](https://github.com/gopad/gopad-ruby/commit/d52e1c1f1d72c62c66fdcc5b7e01518fa6e5a2e3))
+
 ## [2.0.0](https://github.com/gopad/gopad-ruby/compare/v1.26.3...v2.0.0) (2025-11-17)
 
 
