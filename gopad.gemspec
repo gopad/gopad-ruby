@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 3.0'
 
   s.add_dependency 'faraday', '~> 2.9.0'
-  s.add_dependency 'faraday-multipart', '~> 1.0.4'
+  s.add_dependency 'faraday-multipart', '~> 1.2.0'
   s.add_dependency 'marcel', '~> 1.0.4'
 
   s.metadata['rubygems_mfa_required'] = 'true'
