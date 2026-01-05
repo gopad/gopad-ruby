@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.0](https://github.com/gopad/gopad-ruby/compare/v2.1.1...v3.0.0) (2026-01-05)
+
+
+### Features
+
+* **major:** update dependency ruby to v4 ([#169](https://github.com/gopad/gopad-ruby/issues/169)) ([0011bd7](https://github.com/gopad/gopad-ruby/commit/0011bd7a9ad191e4fb7f817671f31f2af6e71888))
+
 ## [2.1.1](https://github.com/gopad/gopad-ruby/compare/v2.1.0...v2.1.1) (2025-12-29)
 
 

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gopad (2.1.1)
+    gopad (3.0.0)
       faraday (~> 2.9.0)
       faraday-multipart (~> 1.2.0)
       logger (~> 1.7.0)
