@@ -221,8 +221,9 @@
         [
             "@semantic-release/github",
             {
-                "publish": true,
-                "assets": "pkg/*.gem"
+                "assets": [
+                    "pkg/*.gem"
+                ]
             }
         ]
     ]
