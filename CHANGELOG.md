@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.1.0](https://github.com/gopad/gopad-ruby/compare/v3.0.0...v3.1.0) (2026-01-19)
+
+### Dependencies
+
+* **minor:** update dependency pry-byebug to v3.12.0 ([#174](https://github.com/gopad/gopad-ruby/issues/174)) ([c5a3c53](https://github.com/gopad/gopad-ruby/commit/c5a3c533461b3e746a899f8b81ff8d6eba9d8f3f))
+* **patch:** update dependency ruby to v4.0.1 ([#172](https://github.com/gopad/gopad-ruby/issues/172)) ([a6f52df](https://github.com/gopad/gopad-ruby/commit/a6f52dfe49fe8036d896175e878bb0ef343c840e))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([4257a90](https://github.com/gopad/gopad-ruby/commit/4257a903d4c57738ac65aaa04b424041e2b83d1d))
+* **flake:** updated lockfile [skip ci] ([e9dd106](https://github.com/gopad/gopad-ruby/commit/e9dd106f91a101ab37943ca3a780163af9febc70))
+
 ## [3.0.0](https://github.com/gopad/gopad-ruby/compare/v2.1.1...v3.0.0) (2026-01-05)
 
 
