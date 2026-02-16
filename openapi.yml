@@ -6,7 +6,7 @@ gemHomepage: https://github.com/gopad/gopad-ruby
 gemLicense: Apache-2.0
 gemName: gopad
 gemSummary: Etherpad for markdown with Go
-gemVersion: 3.2.1
+gemVersion: 3.2.2
 moduleName: Gopad
 library: faraday
 enablePostProcessFile: true
