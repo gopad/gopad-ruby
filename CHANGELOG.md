@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.3.0](https://github.com/gopad/gopad-ruby/compare/v3.2.2...v3.3.0) (2026-03-02)
+
+### Dependencies
+
+* **deps:** lock file maintenance ([b63ff7f](https://github.com/gopad/gopad-ruby/commit/b63ff7f05df2b48fc55aee74f8c760bde65e57f5))
+* **minor:** update dependency rubocop to '~> 1.85.0' ([#181](https://github.com/gopad/gopad-ruby/issues/181)) ([4dfb360](https://github.com/gopad/gopad-ruby/commit/4dfb360fa0bd888244e55bbee881780b6db01640))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([77c87c0](https://github.com/gopad/gopad-ruby/commit/77c87c0fa80151073039a684058a107751b13351))
+* **flake:** updated lockfile [skip ci] ([13d2924](https://github.com/gopad/gopad-ruby/commit/13d292456f6f753beffc798a5179bef0c04d4928))
+* **locks:** lock file maintenance ([#182](https://github.com/gopad/gopad-ruby/issues/182)) ([da916e3](https://github.com/gopad/gopad-ruby/commit/da916e3e9ec34311921a6f0dd2e3224760f3c2fb))
+* replace nixfmt package ([bf2c8c8](https://github.com/gopad/gopad-ruby/commit/bf2c8c8aee9d8a3e91ad48166979f8ce5ca188a3))
+
 ## [3.2.2](https://github.com/gopad/gopad-ruby/compare/v3.2.1...v3.2.2) (2026-02-16)
 
 ### Dependencies
