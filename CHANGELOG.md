@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.3.2](https://github.com/gopad/gopad-ruby/compare/v3.3.1...v3.3.2) (2026-03-23)
+
+### Dependencies
+
+* **patch:** update dependency ruby to v4.0.2 ([#187](https://github.com/gopad/gopad-ruby/issues/187)) ([a961961](https://github.com/gopad/gopad-ruby/commit/a961961207cbfb682d9eb23201ed738e50b10b5f))
+
+### Miscellaneous
+
+* **deps-dev:** bump json from 2.19.1 to 2.19.2 ([bbb4e47](https://github.com/gopad/gopad-ruby/commit/bbb4e4736620f567ffb0a2835c3715f110901a95))
+* **flake:** updated lockfile [skip ci] ([46f7297](https://github.com/gopad/gopad-ruby/commit/46f72978a4c18a07769fe81e22d1b43adcd3acd3))
+* **flake:** updated lockfile [skip ci] ([ccf3ffb](https://github.com/gopad/gopad-ruby/commit/ccf3ffbb3c23c3abc18cd2e5aadb31598684e169))
+* **locks:** lock file maintenance ([#186](https://github.com/gopad/gopad-ruby/issues/186)) ([186f74c](https://github.com/gopad/gopad-ruby/commit/186f74c8e178312a9d622af9b7b42f3fb40c1848))
+* **locks:** lock file maintenance ([#190](https://github.com/gopad/gopad-ruby/issues/190)) ([79520de](https://github.com/gopad/gopad-ruby/commit/79520deed2dd227c2b683b1a282ca490dd589bd1))
+
 ## [3.3.1](https://github.com/gopad/gopad-ruby/compare/v3.3.0...v3.3.1) (2026-03-09)
 
 ### Dependencies
