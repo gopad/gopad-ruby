@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.4.1](https://github.com/gopad/gopad-ruby/compare/v3.4.0...v3.4.1) (2026-04-13)
+
+### Dependencies
+
+* **patch:** update dependency rubocop to v1.86.1 ([#195](https://github.com/gopad/gopad-ruby/issues/195)) ([34e122b](https://github.com/gopad/gopad-ruby/commit/34e122ba78f7b3ec816932730078610209e38059))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([68d8e14](https://github.com/gopad/gopad-ruby/commit/68d8e14004d7bd7929ec31b6831ef36a596b709c))
+* **flake:** updated lockfile [skip ci] ([462381f](https://github.com/gopad/gopad-ruby/commit/462381ffc45e3cee1dab992afcac37d81b34afc2))
+* **locks:** lock file maintenance ([#193](https://github.com/gopad/gopad-ruby/issues/193)) ([243c082](https://github.com/gopad/gopad-ruby/commit/243c082e072965a48af03446b4e21f82635a70b3))
+* **locks:** lock file maintenance ([#196](https://github.com/gopad/gopad-ruby/issues/196)) ([8bd18cf](https://github.com/gopad/gopad-ruby/commit/8bd18cf45c7f581f15e93bbe8004195ad66dbc75))
+
 ## [3.4.0](https://github.com/gopad/gopad-ruby/compare/v3.3.2...v3.4.0) (2026-03-30)
 
 ### Dependencies
