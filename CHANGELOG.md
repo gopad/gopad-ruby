@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.5.0](https://github.com/gopad/gopad-ruby/compare/v3.4.1...v3.5.0) (2026-04-20)
+
+### Dependencies
+
+* **minor:** update dependency rake to '~> 13.4.0' ([#197](https://github.com/gopad/gopad-ruby/issues/197)) ([128629d](https://github.com/gopad/gopad-ruby/commit/128629d4530ebc6e1e00d203b77ddde41020ff4d))
+* **patch:** update dependency rake to v13.4.2 ([#198](https://github.com/gopad/gopad-ruby/issues/198)) ([e6fc6de](https://github.com/gopad/gopad-ruby/commit/e6fc6de0d757e219204059f7ef868814bc47e427))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([f771354](https://github.com/gopad/gopad-ruby/commit/f771354b604064a3a88acb2a81a4b35ae7dbf1e6))
+* **locks:** lock file maintenance ([#199](https://github.com/gopad/gopad-ruby/issues/199)) ([954a373](https://github.com/gopad/gopad-ruby/commit/954a3733e3bcda857c543dbfe895bb4a6320cde6))
+
 ## [3.4.1](https://github.com/gopad/gopad-ruby/compare/v3.4.0...v3.4.1) (2026-04-13)
 
 ### Dependencies
