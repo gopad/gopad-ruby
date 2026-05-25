@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.5.3](https://github.com/gopad/gopad-ruby/compare/v3.5.2...v3.5.3) (2026-05-25)
+
+### Dependencies
+
+* **patch:** update dependency ruby to v4.0.5 ([#205](https://github.com/gopad/gopad-ruby/issues/205)) ([47af7c9](https://github.com/gopad/gopad-ruby/commit/47af7c9663d4080e63a206c5a24005c9c114b99c))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([735c49f](https://github.com/gopad/gopad-ruby/commit/735c49f13c61a4c9d8fc01a02b0a8db2c66fc6fe))
+
 ## [3.5.2](https://github.com/gopad/gopad-ruby/compare/v3.5.1...v3.5.2) (2026-05-18)
 
 ### Dependencies
