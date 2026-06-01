@@ -8,5 +8,5 @@
 # Generator version: 7.17.0
 
 module Gopad
-  VERSION = '3.5.3'.freeze
+  VERSION = '3.6.0'.freeze
 end
