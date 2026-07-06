@@ -1,5 +1,7 @@
 # Changelog
 
+## [3.7.1](https://github.com/gopad/gopad-ruby/compare/v3.7.0...v3.7.1) (2026-07-06)
+
 ## [3.7.0](https://github.com/gopad/gopad-ruby/compare/v3.6.0...v3.7.0) (2026-06-22)
 
 ### Dependencies
