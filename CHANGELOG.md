@@ -1,5 +1,7 @@
 # Changelog
 
+## [3.7.3](https://github.com/gopad/gopad-ruby/compare/v3.7.2...v3.7.3) (2026-07-20)
+
 ## [3.7.2](https://github.com/gopad/gopad-ruby/compare/v3.7.1...v3.7.2) (2026-07-13)
 
 ## [3.7.1](https://github.com/gopad/gopad-ruby/compare/v3.7.0...v3.7.1) (2026-07-06)
