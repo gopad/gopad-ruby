@@ -1,4 +1,5 @@
 ---
+# yaml-language-server: $schema=https://json-schema.org/draft-07/schema#
 gemAuthor: Thomas Boerger
 gemAuthorEmail: thomas@webhippie.de
 gemDescription: OpenAPI client for Gopad
