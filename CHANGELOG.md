@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.8.0](https://github.com/gopad/gopad-ruby/compare/v3.7.3...v3.8.0) (2026-08-10)
+
+### Features
+
+* restructure repo and build processes ([25eceb1](https://github.com/gopad/gopad-ruby/commit/25eceb11e39a56b597c717941a308eac89d0993d))
+
+### Dependencies
+
+* **minor:** update dependency rubocop to '~> 1.89.0' ([#220](https://github.com/gopad/gopad-ruby/issues/220)) ([27c15a9](https://github.com/gopad/gopad-ruby/commit/27c15a9853eb69bf1e1e9346779e827d95ae1380))
+
 ## [3.7.3](https://github.com/gopad/gopad-ruby/compare/v3.7.2...v3.7.3) (2026-07-20)
 
 ## [3.7.2](https://github.com/gopad/gopad-ruby/compare/v3.7.1...v3.7.2) (2026-07-13)
