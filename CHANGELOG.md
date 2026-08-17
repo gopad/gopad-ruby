@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.8.1](https://github.com/gopad/gopad-ruby/compare/v3.8.0...v3.8.1) (2026-08-17)
+
+### Dependencies
+
+* **patch:** update dependency pre-commit to v4.6.2 ([#223](https://github.com/gopad/gopad-ruby/issues/223)) ([baf5c8c](https://github.com/gopad/gopad-ruby/commit/baf5c8c43bebc488952222d87cdd3ce007f762ca))
+
 ## [3.8.0](https://github.com/gopad/gopad-ruby/compare/v3.7.3...v3.8.0) (2026-08-10)
 
 ### Features
