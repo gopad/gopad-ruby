@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.9.0](https://github.com/gopad/gopad-ruby/compare/v3.8.1...v3.9.0) (2026-08-31)
+
+### Dependencies
+
+* **minor:** update dependency rubocop to '~> 1.90.0' ([#225](https://github.com/gopad/gopad-ruby/issues/225)) ([90d6d3b](https://github.com/gopad/gopad-ruby/commit/90d6d3b93c3107a25ffd91c77e18772d4a472dbf))
+
 ## [3.8.1](https://github.com/gopad/gopad-ruby/compare/v3.8.0...v3.8.1) (2026-08-17)
 
 ### Dependencies
