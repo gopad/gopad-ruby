@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.11.0](https://github.com/gopad/gopad-ruby/compare/v3.10.0...v3.11.0) (2026-10-12)
+
+### Dependencies
+
+* **minor:** update dependency rubocop to '~> 1.92.0' ([#236](https://github.com/gopad/gopad-ruby/issues/236)) ([dd5985f](https://github.com/gopad/gopad-ruby/commit/dd5985f1274f8bb3c56edd6d48b6accb9a0d70af))
+* **mise:** update dependency prek to v0.5.4 ([#233](https://github.com/gopad/gopad-ruby/issues/233)) ([f59d06c](https://github.com/gopad/gopad-ruby/commit/f59d06cb21cfc20839c107e6ba35bea72b35e507))
+* **mise:** update dependency prek to v0.5.5 ([#235](https://github.com/gopad/gopad-ruby/issues/235)) ([eb9759a](https://github.com/gopad/gopad-ruby/commit/eb9759a9a4868030836ecfcb3785b98f55e51131))
+
 ## [3.10.0](https://github.com/gopad/gopad-ruby/compare/v3.9.0...v3.10.0) (2026-09-14)
 
 ### Dependencies
