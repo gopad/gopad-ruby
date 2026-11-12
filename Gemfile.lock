@@ -5,7 +5,7 @@ PATH
       faraday (~> 2.15.0)
       faraday-multipart (~> 1.2.0)
       logger (~> 1.7.0)
-      marcel (~> 1.0.4)
+      marcel (~> 1.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -28,7 +28,7 @@ GEM
     language_server-protocol (3.17.0.6)
     lint_roller (1.1.0)
     logger (1.7.0)
-    marcel (1.0.4)
+    marcel (1.2.1)
     method_source (1.1.0)
     multipart-post (2.4.1)
     net-http (0.10.0)
