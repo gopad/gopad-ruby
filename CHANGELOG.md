@@ -1,5 +1,19 @@
 # Changelog
 
+## [4.0.0](https://github.com/gopad/gopad-ruby/compare/v3.11.2...v4.0.0) (2026-11-16)
+
+* automated release update [skip ci] ([46c1123](https://github.com/gopad/gopad-ruby/commit/46c11234bf8738daa25a79d9a570780adaa73ba3))
+* **mise:** lock file maintenance ([#248](https://github.com/gopad/gopad-ruby/issues/248)) ([d9d7d02](https://github.com/gopad/gopad-ruby/commit/d9d7d020848737fd20bde11da1046c8742ad2260))
+* **mise:** lock file maintenance ([#253](https://github.com/gopad/gopad-ruby/issues/253)) ([1a08771](https://github.com/gopad/gopad-ruby/commit/1a08771d0acb90b8c62cdcff7a01d6fd79ce6201))
+
+### Dependencies
+
+* **major:** update dependency marcel to v2 ([#251](https://github.com/gopad/gopad-ruby/issues/251)) ([8aaac4e](https://github.com/gopad/gopad-ruby/commit/8aaac4e902dd00a228c6012ae2e08d630781afb3))
+* **minor:** update dependency faraday to '~> 2.14.0' [security] ([#249](https://github.com/gopad/gopad-ruby/issues/249)) ([d37eeb2](https://github.com/gopad/gopad-ruby/commit/d37eeb28b5f322b7fb714719465f59e5c6a2a690))
+* **minor:** update dependency faraday to '~> 2.15.0' ([#252](https://github.com/gopad/gopad-ruby/issues/252)) ([7224fea](https://github.com/gopad/gopad-ruby/commit/7224fea578e9f7bd850ea6da4a8e78133c36d74b))
+* **mise:** update dependency prek to v0.5.10 ([#247](https://github.com/gopad/gopad-ruby/issues/247)) ([602e6e7](https://github.com/gopad/gopad-ruby/commit/602e6e765acb59a0c8087ebdbb94fb87553b2e05))
+* **mise:** update dependency prek to v0.5.11 ([#254](https://github.com/gopad/gopad-ruby/issues/254)) ([6c73576](https://github.com/gopad/gopad-ruby/commit/6c7357648eefaf97da326da7647e13f97cb1170a))
+
 ## [3.11.2](https://github.com/gopad/gopad-ruby/compare/v3.11.1...v3.11.2) (2026-11-02)
 
 ### Dependencies
